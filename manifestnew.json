@@ -1,0 +1,16 @@
+{
+    "name": "Grocies SuperMarket",
+    "short_name": "WebApp",
+    "start_url": "/home.html",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#000000",
+    "icons": [
+      {
+        "src": "homeicon.png",
+        "sizes": "250x250",
+        "type": "image/png"
+      }
+    ]
+  }
+  

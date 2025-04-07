@@ -1,0 +1,294 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* CSS styles for the body section */
+  body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #logo {
+    height: 240px;
+    width: 350px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  nav {
+    background-color: #006ca5;
+    height: 10vh;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+  nav a {
+    position: relative;
+    text-decoration: none;
+    color: beige;
+    font-size: 15px;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #fff;
+  }
+  
+  nav a::after {
+    content: "";
+    background-color: aliceblue;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin: auto;
+    transition: width 0.3s;
+  }
+  
+  nav a:hover::after {
+    width: 100%;
+  }
+  
+  .section {
+    color: #333;
+    background-color: #006ca5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+#vision{
+    background-color: #aac7d8;
+}
+
+
+#mission{
+    background-color: #aac7d8;
+}
+
+#colombo{
+    border-style: none;
+    border-radius: 10px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-width: 1px;
+    background-color: #ececec
+}
+
+#kandy{
+    border-style: none;
+    border-radius: 10px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-width: 1px;
+    background-color: #ececec
+}
+
+#galle{
+    border-style: none;
+    border-radius: 10px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-width: 1px;
+    background-color: #ececec
+}
+
+#image{
+    width: 600px;
+    height: 400px;
+}
+
+h1, h2{
+    color: #152238;
+}
+
+#colombo:hover{
+    transform: scale(1.03);
+    transition: 0.3s;
+    background-color: #515151;
+    color: white;
+}
+
+#kandy:hover{
+    transform: scale(1.03);
+    transition: 0.3s;
+    background-color: #515151;
+    color: white;
+}
+
+#galle:hover{
+    transform: scale(1.03);
+    transition: 0.3s;
+    background-color: #515151;
+    color: white;
+}
+
+p{
+    font-size: 15px;
+}
+
+.icon_sm{
+    display:block;
+    margin-right: 20px;
+    transition: 0.2s;
+    font-size: 13px;
+}
+
+.icon_sm:hover{
+    color: rgb(72, 134, 192);
+}
+
+body img{
+    border-style: hidden;
+    border-radius: 10px;
+}
+
+.services{
+    width: 100%;
+    font-size: 14px;
+    margin: 5px;
+    text-align: center;
+}
+
+.services tr:hover{
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+th{
+    background-color: #aac7d8;
+    color: #152238;
+    height: 65px;
+  }
+
+td{
+    height: 65px;
+    color: #242526;
+    background-color: aliceblue;
+}
+
+/*CSS Styles for the footer section*/
+
+footer{
+    background-color:#dfebf6;
+    border-radius: 10px;
+    color: #242526;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: auto;
+}
+
+.footer_column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_column a{
+    color: #006ca5;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.footer_column a:hover{
+    font-weight: bold;
+}
+
+.footer_title p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/*Mobile view*/
+
+@media screen and (max-width:600px){
+    body{
+        margin: 6px;
+    }
+
+    #logo{
+        width: 100%;
+        height: auto;
+    }
+
+    nav{
+        flex-direction: column;
+        align-items: center;
+        height: 50vh;
+    }
+
+    th{
+        display: none;
+    }
+
+    tr,td{
+        display: block;
+        width: 100%;
+    }
+
+    .service_td{
+        font-weight: bold;
+    }
+    
+    .services tr:hover{
+        font-weight: initial;
+    }
+
+    #colombo:hover{
+        background-color: initial;
+        color: initial;
+    }
+
+    #kandy:hover{
+        background-color: initial;
+        color: initial;
+    }
+
+    #galle:hover{
+        background-color: initial;
+        color: initial;
+    }
+
+    #map{
+        width: 100%;
+        height: auto;
+    }
+
+    #image{
+        width: 100%;
+        height: auto;
+    }
+
+    .footer{
+        flex-direction: column;
+        align-items: center;
+    }
+}

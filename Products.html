@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEWUNEED - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/Products.css">
+    <!-- Custom js -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/Products.js"></script>
+
+</head>
+<body>
+    <!-- Header -->
+<header class="bg-white shadow-sm">
+  <!-- Top bar -->
+  <div class="container mx-auto px-4 py-3">
+      <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <a href="home.html" class="logo-text">
+              <span class="text-blue-600">TEWU</span><span class="text-yellow-500">NEED</span>
+          </a>
+          
+          <!-- Search Bar -->
+          <div class="hidden md:block relative">
+              <input type="text" placeholder="Search Products" class="search-bar pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none w-64">
+              <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+          
+          <!-- User Links -->
+          <div class="flex items-center space-x-6">
+
+            <!-- Keranjang Icon -->
+  <div class="cart-icon-container">
+    <a href="keranjang.html" onclick="showPage('cart'); return false;" class="text-decoration-none">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </a>
+</div>
+
+              <!-- User Links -->
+              <div class="hidden md:flex items-center space-x-4">
+                  <a href="#" class="text-gray-700 hover:text-blue-600">My Account</a>
+                  <a href="#" class="text-gray-700 hover:text-blue-600">Sign In</a>
+                  <a href="#" class="text-gray-700 hover:text-blue-600">Register</a>
+              </div>
+              
+              <!-- Mobile Menu Toggle -->
+              <button class="md:hidden text-gray-700 focus:outline-none">
+                  <i class="fas fa-bars text-xl"></i>
+              </button>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Navigation -->
+  <nav class="bg-gray-50 shadow-inner">
+      <div class="container mx-auto px-4">
+          <div class="flex justify-center md:justify-start space-x-8 py-3">
+              <a href="home.html" class="nav-link text-gray-700 hover:text-blue-600 active">Home</a>
+              <a href="dairy.html" class="nav-link text-gray-700 hover:text-blue-600">Dairy Products</a>
+              <a href="vegetables.html" class="nav-link text-gray-700 hover:text-blue-600">Vegetables</a>
+              <a href="cosmetics.html" class="nav-link text-gray-700 hover:text-blue-600">Cosmetics and Skin Care</a>
+              <a href="order.html" class="nav-link text-gray-700 hover:text-blue-600">My Orders</a>
+          </div>
+      </div>
+  </nav>
+</header>
+
+     <!-- Featured Products Section -->
+     <section class="featured-section">
+      <div class="container">
+          <div class="text-center mb-4">
+              <h2 class="section-title">Products</h2>
+          </div>
+
+          <div class="row g-3"> <!-- Mengurangi gutter dari g-4 ke g-3 -->
+            <!-- Product 1 - Indomie -->
+            <div class="col-sm-2 col-6"> <!-- Mengubah col-sm-3 ke col-sm-2 dan menambahkan col-6 untuk mobile -->
+                <div class="product-card small-card"> <!-- Menambahkan class small-card -->
+                    <div class="product-img">
+                        <img src="/api/placeholder/200/200" alt="Indomie Goreng" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Indomie Goreng</h5> <!-- Mengubah h4 ke h5 -->
+                        <div class="product-price">Rp3.500</div>
+                        <div class="product-rating small-rating"> <!-- Menambahkan class small-rating -->
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="ms-1 text-muted small-text">(4.7)</span> <!-- Menambahkan small-text -->
+                        </div>
+                        <button onclick="addToCart(1, 'Indomie Goreng', 3500, 'Images/indomie.jpeg')" 
+                        class="btn btn-primary btn-sm">Tambah</button> <!-- Menambahkan btn-sm -->
+                        <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal1')">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Product 1 - Indomie -->
+<div class="product-modal" id="productModal1">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal1')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Indomie Goreng">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Indomie Goreng</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-2 text-muted">(4.7)</span>
+              </div>
+              <div class="modal-product-price">Rp3.500</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Mi instan goreng dengan cita rasa khas Indonesia. Disajikan tanpa kuah, dengan bumbu yang kaya akan rasa.</p>
+                <ul>
+                  <li>Mi kering berkualitas tinggi</li>
+                  <li>Bumbu kaya rempah</li>
+                  <li>Bawang goreng asli</li>
+                  <li>Minyak bumbu spesial</li>
+                  <li>Cabe bubuk sesuai selera</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Informasi Gizi (per porsi):</h5>
+                <table class="table table-sm">
+                  <tr><td>Energi</td><td>380 kkal</td></tr>
+                  <tr><td>Protein</td><td>7g</td></tr>
+                  <tr><td>Lemak</td><td>15g</td></tr>
+                  <tr><td>Karbohidrat</td><td>52g</td></tr>
+                  <tr><td>Sodium</td><td>1240mg</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(1, 'Indomie Goreng', 3500, 'Images/indomie.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        
+            <!-- Product 2 - Teh Botol Sosro -->
+            <div class="col-sm-2 col-6">
+                <div class="product-card small-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/200/200" alt="Teh Botol Sosro" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Teh Botol Sosro</h5>
+                        <div class="product-price">Rp5.000</div>
+                        <div class="product-rating small-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="ms-1 text-muted small-text">(4.2)</span>
+                        </div>
+                        <button onclick="addToCart(2, 'Teh Botol Sosro', 5000, 'Images/tehbotol.jpeg')" 
+                        class="btn btn-primary btn-sm">Tambah</button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal2')">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Product 2 - Teh Botol Sosro -->
+<div class="product-modal" id="productModal2">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal2')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Teh Botol Sosro">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Teh Botol Sosro</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="ms-2 text-muted">(4.2)</span>
+              </div>
+              <div class="modal-product-price">Rp5.000</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Minuman teh dalam kemasan botol yang menyegarkan dengan rasa manis yang pas dan aroma melati khas.</p>
+                <ul>
+                  <li>Teh asli pilihan</li>
+                  <li>Proses penyeduhan tradisional</li>
+                  <li>Botol kaca 450ml</li>
+                  <li>Tanpa pengawet</li>
+                  <li>Cocok disajikan dingin</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Informasi Gizi (per botol):</h5>
+                <table class="table table-sm">
+                  <tr><td>Energi</td><td>100 kkal</td></tr>
+                  <tr><td>Protein</td><td>0g</td></tr>
+                  <tr><td>Lemak</td><td>0g</td></tr>
+                  <tr><td>Karbohidrat</td><td>25g</td></tr>
+                  <tr><td>Gula</td><td>23g</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(2, 'Teh Botol Sosro', 5000, 'Images/tehbotol.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        
+            <!-- Product 3 - Kopi Kapal Api -->
+            <div class="col-sm-2 col-6">
+                <div class="product-card small-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/200/200" alt="Kopi Kapal Api Special" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Kopi Kapal Api</h5>
+                        <div class="product-price">Rp12.000</div>
+                        <div class="product-rating small-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="ms-1 text-muted small-text">(4.9)</span>
+                        </div>
+                        <button onclick="addToCart(3, 'Kopi Kapal Api Special', 12000, 'Images/kapalapi.jpeg')" 
+                        class="btn btn-primary btn-sm">Tambah</button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal3')">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Product 3 - Kopi Kapal Api -->
+<div class="product-modal" id="productModal3">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal3')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Kopi Kapal Api Special">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Kopi Kapal Api</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="ms-2 text-muted">(4.9)</span>
+              </div>
+              <div class="modal-product-price">Rp12.000</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Kopi bubuk premium dengan aroma khas dan rasa yang kuat dan nikmat. Dibuat dari biji kopi pilihan.</p>
+                <ul>
+                  <li>Biji kopi Robusta & Arabika</li>
+                  <li>Tingkat sangrai medium to dark</li>
+                  <li>Kemasan 200g</li>
+                  <li>Cocok untuk kopi tubruk</li>
+                  <li>Aroma kuat & tahan lama</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Informasi Gizi (per 10g):</h5>
+                <table class="table table-sm">
+                  <tr><td>Energi</td><td>35 kkal</td></tr>
+                  <tr><td>Protein</td><td>1g</td></tr>
+                  <tr><td>Lemak</td><td>0.1g</td></tr>
+                  <tr><td>Karbohidrat</td><td>7.5g</td></tr>
+                  <tr><td>Kafein</td><td>80mg</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(3, 'Kopi Kapal Api Special', 12000, 'Images/kapalapi.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+        
+            <!-- Product 4 - Bango Kecap Manis -->
+            <div class="col-sm-2 col-6">
+                <div class="product-card small-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/200/200" alt="Kecap Manis Bango" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Kecap Bango</h5>
+                        <div class="product-price">Rp15.000</div>
+                        <div class="product-rating small-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="ms-1 text-muted small-text">(4.6)</span>
+                        </div>
+                        <button onclick="addToCart(4, 'Kecap Manis Bango', 15000, 'Images/bango.jpeg')" 
+                        class="btn btn-primary btn-sm">Tambah</button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal4')">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Product 4 - Kecap Bango -->
+<div class="product-modal" id="productModal4">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal4')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Kecap Manis Bango">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Kecap Bango</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-2 text-muted">(4.6)</span>
+              </div>
+              <div class="modal-product-price">Rp15.000</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Kecap manis premium dengan kekentalan yang pas dan rasa manis gurih yang khas untuk berbagai masakan Indonesia.</p>
+                <ul>
+                  <li>Terbuat dari kedelai hitam pilihan</li>
+                  <li>Diproses secara alami</li>
+                  <li>Kemasan botol 275ml</li>
+                  <li>Tanpa pengawet buatan</li>
+                  <li>Cocok untuk semua masakan</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Informasi Gizi (per 15ml):</h5>
+                <table class="table table-sm">
+                  <tr><td>Energi</td><td>45 kkal</td></tr>
+                  <tr><td>Protein</td><td>1g</td></tr>
+                  <tr><td>Lemak</td><td>0g</td></tr>
+                  <tr><td>Karbohidrat</td><td>11g</td></tr>
+                  <tr><td>Sodium</td><td>390mg</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(4, 'Kecap Manis Bango', 15000, 'Images/bango.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        
+            <!-- Product 5 - Tango Wafer -->
+            <div class="col-sm-2 col-6">
+                <div class="product-card small-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/200/200" alt="Tango Wafer Cokelat" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Tango Wafer</h5>
+                        <div class="product-price">Rp8.000</div>
+                        <div class="product-rating small-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="ms-1 text-muted small-text">(4.3)</span>
+                        </div>
+                        <button onclick="addToCart(5, 'Tango Wafer Cokelat', 8000, 'Images/tango.jpeg')" 
+                        class="btn btn-primary btn-sm">Tambah</button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal5')">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Product 5 - Tango Wafer -->
+<div class="product-modal" id="productModal5">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal5')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Tango Wafer Cokelat">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Tango Wafer</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="ms-2 text-muted">(4.3)</span>
+              </div>
+              <div class="modal-product-price">Rp8.000</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Wafer renyah berlapis krim cokelat yang lezat. Camilan manis yang nikmat untuk dinikmati kapan saja.</p>
+                <ul>
+                  <li>Wafer layer renyah</li>
+                  <li>Krim cokelat tebal</li>
+                  <li>Kemasan 130g</li>
+                  <li>Tanpa pewarna buatan</li>
+                  <li>Cocok untuk camilan keluarga</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Informasi Gizi (per 27g):</h5>
+                <table class="table table-sm">
+                  <tr><td>Energi</td><td>140 kkal</td></tr>
+                  <tr><td>Protein</td><td>1.5g</td></tr>
+                  <tr><td>Lemak</td><td>7g</td></tr>
+                  <tr><td>Karbohidrat</td><td>18g</td></tr>
+                  <tr><td>Gula</td><td>9g</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(5, 'Tango Wafer Cokelat', 8000, 'Images/tango.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+        
+            <!-- Product 6 - Chitato -->
+            <div class="col-sm-2 col-6">
+                <div class="product-card small-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/200/200" alt="Chitato Rasa Ayam Panggang" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Chitato</h5>
+                        <div class="product-price">Rp10.000</div>
+                        <div class="product-rating small-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="ms-1 text-muted small-text">(4.5)</span>
+                        </div>
+                        <button onclick="addToCart(6, 'Chitato Ayam Panggang', 10000, 'Images/chitato.jpeg')" 
+                        class="btn btn-primary btn-sm">Tambah</button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal6')">Detail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Product 6 - Chitato -->
+<div class="product-modal" id="productModal6">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal6')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Chitato Rasa Ayam Panggang">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Chitato</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-2 text-muted">(4.5)</span>
+              </div>
+              <div class="modal-product-price">Rp10.000</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Keripik kentang renyah dengan irisan tebal dan bumbu rasa ayam panggang yang gurih dan lezat.</p>
+                <ul>
+                  <li>Kentang asli pilihan</li>
+                  <li>Irisan tebal dan renyah</li>
+                  <li>Kemasan 75g</li>
+                  <li>Bumbu rasa ayam panggang</li>
+                  <li>Tekstur bergelombang unik</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Informasi Gizi (per 25g):</h5>
+                <table class="table table-sm">
+                  <tr><td>Energi</td><td>130 kkal</td></tr>
+                  <tr><td>Protein</td><td>2g</td></tr>
+                  <tr><td>Lemak</td><td>7g</td></tr>
+                  <tr><td>Karbohidrat</td><td>16g</td></tr>
+                  <tr><td>Sodium</td><td>210mg</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(6, 'Chitato Ayam Panggang', 10000, 'Images/chitato.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class = "row">
+<!-- Product 7 - Aqua -->
+<div class="col-sm-2 col-6">
+    <div class="product-card small-card">
+        <div class="product-img">
+            <img src="/api/placeholder/200/200" alt="Aqua Air Mineral" class="img-fluid">
+        </div>
+        <div class="product-info">
+            <h5 class="product-title">Aqua</h5>
+            <div class="product-price">Rp3.000</div>
+            <div class="product-rating small-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="ms-1 text-muted small-text">(5.0)</span>
+            </div>
+            <button onclick="addToCart(7, 'Aqua Air Mineral', 3000, 'Images/aqua.jpeg')" 
+            class="btn btn-primary btn-sm">Tambah</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal7')">Detail</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Modal Product 7 - Aqua -->
+<div class="product-modal" id="productModal7">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal7')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Aqua Air Mineral">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Aqua</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="ms-2 text-muted">(5.0)</span>
+              </div>
+              <div class="modal-product-price">Rp3.000</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Air mineral murni dari mata air pegunungan yang terlindungi. Proses penyaringan yang ketat menghasilkan air minum yang sehat dan segar.</p>
+                <ul>
+                  <li>Air mineral murni</li>
+                  <li>Sumber dari mata air pegunungan</li>
+                  <li>Botol 600ml</li>
+                  <li>pH seimbang</li>
+                  <li>Proses penyaringan multi-tahap</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Informasi Gizi (per 100ml):</h5>
+                <table class="table table-sm">
+                  <tr><td>Energi</td><td>0 kkal</td></tr>
+                  <tr><td>Protein</td><td>0g</td></tr>
+                  <tr><td>Lemak</td><td>0g</td></tr>
+                  <tr><td>Karbohidrat</td><td>0g</td></tr>
+                  <tr><td>Mineral</td><td>Tersedia</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(7, 'Aqua Air Mineral', 3000, 'Images/aqua.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Product 8 - Dancow -->
+  <div class="col-sm-2 col-6">
+    <div class="product-card small-card">
+        <div class="product-img">
+            <img src="/api/placeholder/200/200" alt="Dancow 1+" class="img-fluid">
+        </div>
+        <div class="product-info">
+            <h5 class="product-title">Dancow 1+</h5>
+            <div class="product-price">Rp45.000</div>
+            <div class="product-rating small-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="ms-1 text-muted small-text">(4.1)</span>
+            </div>
+            <button onclick="addToCart(8, 'Dancow 1+', 45000, 'Images/dancow.jpeg')" 
+            class="btn btn-primary btn-sm">Tambah</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal8')">Detail</button>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Modal Product 8 - Dancow -->
+<div class="product-modal" id="productModal8">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal8')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Dancow 1+">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Dancow 1+</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="ms-2 text-muted">(4.1)</span>
+              </div>
+              <div class="modal-product-price">Rp45.000</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Susu pertumbuhan untuk anak usia 1-3 tahun yang diformulasikan dengan nutrisi lengkap untuk mendukung tumbuh kembang optimal.</p>
+                <ul>
+                  <li>Mengandung Lactobacillus rhamnosus</li>
+                  <li>Omega 3 & 6 untuk perkembangan otak</li>
+                  <li>Protein, kalsium, vitamin D untuk tulang</li>
+                  <li>Kemasan 350g</li>
+                  <li>Rasa madu yang disukai anak</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Informasi Gizi (per 100g):</h5>
+                <table class="table table-sm">
+                  <tr><td>Energi</td><td>500 kkal</td></tr>
+                  <tr><td>Protein</td><td>15g</td></tr>
+                  <tr><td>Lemak</td><td>25g</td></tr>
+                  <tr><td>Karbohidrat</td><td>55g</td></tr>
+                  <tr><td>Kalsium</td><td>600mg</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(8, 'Dancow 1+', 45000, 'Images/dancow.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Product 9 - Sari Roti -->
+  <div class="col-sm-2 col-6">
+    <div class="product-card small-card">
+        <div class="product-img">
+            <img src="/api/placeholder/200/200" alt="Sari Roti Tawar" class="img-fluid">
+        </div>
+        <div class="product-info">
+            <h5 class="product-title">Sari Roti</h5>
+            <div class="product-price">Rp15.000</div>
+            <div class="product-rating small-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-1 text-muted small-text">(4.6)</span>
+            </div>
+            <button onclick="addToCart(9, 'Sari Roti Tawar', 15000, 'Images/sariroti.jpeg')" 
+            class="btn btn-primary btn-sm">Tambah</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal9')">Detail</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Modal Product 9 - Sari Roti -->
+<div class="product-modal" id="productModal9">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal9')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Sari Roti Tawar">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Sari Roti</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-2 text-muted">(4.6)</span>
+              </div>
+              <div class="modal-product-price">Rp15.000</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Roti tawar lembut dan tahan lama yang cocok untuk sarapan atau camilan sehat. Dibuat dengan bahan berkualitas dan proses higienis.</p>
+                <ul>
+                  <li>Roti tawar putih lembut</li>
+                  <li>Diperkaya dengan vitamin dan mineral</li>
+                  <li>Kemasan 12 iris</li>
+                  <li>Tanpa bahan pengawet</li>
+                  <li>Tahan lama hingga 7 hari</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Informasi Gizi (per 2 iris):</h5>
+                <table class="table table-sm">
+                  <tr><td>Energi</td><td>140 kkal</td></tr>
+                  <tr><td>Protein</td><td>5g</td></tr>
+                  <tr><td>Lemak</td><td>2g</td></tr>
+                  <tr><td>Karbohidrat</td><td>26g</td></tr>
+                  <tr><td>Serat</td><td>1g</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(9, 'Sari Roti Tawar', 15000, 'Images/sariroti.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Product 10 - ABC Kopi -->
+  <div class="col-sm-2 col-6">
+    <div class="product-card small-card">
+        <div class="product-img">
+            <img src="/api/placeholder/200/200" alt="ABC Kopi Susu" class="img-fluid">
+        </div>
+        <div class="product-info">
+            <h5 class="product-title">ABC Kopi</h5>
+            <div class="product-price">Rp2.500</div>
+            <div class="product-rating small-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="ms-1 text-muted small-text">(4.0)</span>
+            </div>
+            <button onclick="addToCart(10, 'ABC Kopi Susu', 2500, 'Images/abckopi.jpeg')" 
+            class="btn btn-primary btn-sm">Tambah</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal10')">Detail</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Modal Product 10 - ABC Kopi -->
+<div class="product-modal" id="productModal10">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal10')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="ABC Kopi Susu">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">ABC Kopi</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="ms-2 text-muted">(4.0)</span>
+              </div>
+              <div class="modal-product-price">Rp2.500</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Kopi susu siap minum dalam kemasan praktis. Kopi yang kuat dengan susu yang creamy menciptakan rasa yang pas untuk menikmati kopi kapan saja.</p>
+                <ul>
+                  <li>Kopi susu siap minum</li>
+                  <li>Kemasan 200ml</li>
+                  <li>Praktis dan mudah dibawa</li>
+                  <li>Rasa kopi yang kuat</li>
+                  <li>Manis yang pas</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Informasi Gizi (per kemasan):</h5>
+                <table class="table table-sm">
+                  <tr><td>Energi</td><td>125 kkal</td></tr>
+                  <tr><td>Protein</td><td>3g</td></tr>
+                  <tr><td>Lemak</td><td>4g</td></tr>
+                  <tr><td>Karbohidrat</td><td>20g</td></tr>
+                  <tr><td>Kafein</td><td>40mg</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(10, 'ABC Kopi Susu', 2500, 'Images/abckopi.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Product 11 - Pepsodent -->
+  <div class="col-sm-2 col-6">
+    <div class="product-card small-card">
+        <div class="product-img">
+            <img src="/api/placeholder/200/200" alt="Pepsodent Herbal" class="img-fluid">
+        </div>
+        <div class="product-info">
+            <h5 class="product-title">Pepsodent</h5>
+            <div class="product-price">Rp12.000</div>
+            <div class="product-rating small-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-1 text-muted small-text">(4.5)</span>
+            </div>
+            <button onclick="addToCart(11, 'Pepsodent Herbal', 12000, 'Images/pepsodent.jpeg')" 
+            class="btn btn-primary btn-sm">Tambah</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal11')">Detail</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Modal Product 11 - Pepsodent -->
+<div class="product-modal" id="productModal11">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal11')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Pepsodent Herbal">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Pepsodent</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-2 text-muted">(4.5)</span>
+              </div>
+              <div class="modal-product-price">Rp12.000</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Pasta gigi dengan formula herbal yang memberikan perlindungan menyeluruh untuk gigi dan gusi. Membersihkan dengan lembut dan menyegarkan nafas.</p>
+                <ul>
+                  <li>Formula herbal alami</li>
+                  <li>Mencegah gigi berlubang</li>
+                  <li>Menyegarkan nafas</li>
+                  <li>Mencegah plak dan karang gigi</li>
+                  <li>Kemasan 120g</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Kandungan Utama:</h5>
+                <table class="table table-sm">
+                  <tr><td>Fluoride</td><td>1000ppm</td></tr>
+                  <tr><td>Calcium</td><td>Ada</td></tr>
+                  <tr><td>Silica</td><td>Ada</td></tr>
+                  <tr><td>Ekstrak Herbal</td><td>Ada</td></tr>
+                  <tr><td>Mint</td><td>Ada</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(11, 'Pepsodent Herbal', 12000, 'Images/pepsodent.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Product 12 - Rinso -->
+  <div class="col-sm-2 col-6">
+    <div class="product-card small-card">
+        <div class="product-img">
+            <img src="/api/placeholder/200/200" alt="Rinso Molto" class="img-fluid">
+        </div>
+        <div class="product-info">
+            <h5 class="product-title">Rinso</h5>
+            <div class="product-price">Rp20.000</div>
+            <div class="product-rating small-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="ms-1 text-muted small-text">(4.2)</span>
+            </div>
+            <button onclick="addToCart(12, 'Rinso Molto', 20000, 'Images/rinso.jpeg')" 
+            class="btn btn-primary btn-sm">Tambah</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal12')">Detail</button>
+        </div>
+    </div>
+  </div>
+  <!-- Modal Product 12 - Rinso -->
+<div class="product-modal" id="productModal12">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal12')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Rinso Molto">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Rinso</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="ms-2 text-muted">(4.2)</span>
+              </div>
+              <div class="modal-product-price">Rp20.000</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Deterjen bubuk dengan kekuatan anti noda dan keharuman Molto yang tahan lama. Membersihkan pakaian dengan efektif dan memberikan keharuman segar.</p>
+                <ul>
+                  <li>Formula anti noda kuat</li>
+                  <li>Wangi Molto yang tahan lama</li>
+                  <li>Kemasan 800g</li>
+                  <li>Efektif membersihkan berbagai jenis noda</li>
+                  <li>Aman untuk semua jenis kain</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Kandungan Utama:</h5>
+                <table class="table table-sm">
+                  <tr><td>Surfaktan</td><td>Ada</td></tr>
+                  <tr><td>Enzim</td><td>Ada</td></tr>
+                  <tr><td>Pemutih</td><td>Ada</td></tr>
+                  <tr><td>Pewangi</td><td>Ada</td></tr>
+                  <tr><td>Anti Redeposisi</td><td>Ada</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(12, 'Rinso Molto', 20000, 'Images/rinso.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class = "row">
+  <!-- Product 13 - Mie Sedap -->
+  <div class="col-sm-2 col-6">
+    <div class="product-card small-card">
+        <div class="product-img">
+            <img src="/api/placeholder/200/200" alt="Mie Sedap Goreng" class="img-fluid">
+        </div>
+        <div class="product-info">
+            <h5 class="product-title">Mie Sedap</h5>
+            <div class="product-price">Rp3.000</div>
+            <div class="product-rating small-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-1 text-muted small-text">(4.6)</span>
+            </div>
+            <button onclick="addToCart(13, 'Mie Sedap Goreng', 3000, 'Images/miesedap.jpeg')" 
+            class="btn btn-primary btn-sm">Tambah</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal13')">Detail</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Modal Product 13 - Mie Sedap -->
+<div class="product-modal" id="productModal13">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal13')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Mie Sedap Goreng">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Mie Sedap</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-2 text-muted">(4.6)</span>
+              </div>
+              <div class="modal-product-price">Rp3.000</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Mi instan goreng dengan cita rasa khas dan bumbu yang kaya. Dilengkapi dengan bawang goreng asli dan bumbu pelengkap lainnya.</p>
+                <ul>
+                  <li>Mi berkualitas dengan tekstur kenyal</li>
+                  <li>Bumbu gurih dan kaya rasa</li>
+                  <li>Bawang goreng asli</li>
+                  <li>Cabe bubuk untuk rasa pedas</li>
+                  <li>Siap saji dalam 3 menit</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Informasi Gizi (per porsi):</h5>
+                <table class="table table-sm">
+                  <tr><td>Energi</td><td>400 kkal</td></tr>
+                  <tr><td>Protein</td><td>8g</td></tr>
+                  <tr><td>Lemak</td><td>16g</td></tr>
+                  <tr><td>Karbohidrat</td><td>54g</td></tr>
+                  <tr><td>Sodium</td><td>1180mg</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(13, 'Mie Sedap Goreng', 3000, 'Images/miesedap.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Product 14 - Silverqueen -->
+  <div class="col-sm-2 col-6">
+    <div class="product-card small-card">
+        <div class="product-img">
+            <img src="/api/placeholder/200/200" alt="Silverqueen" class="img-fluid">
+        </div>
+        <div class="product-info">
+            <h5 class="product-title">Silverqueen</h5>
+            <div class="product-price">Rp12.000</div>
+            <div class="product-rating small-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="ms-1 text-muted small-text">(4.9)</span>
+            </div>
+            <button onclick="addToCart(14, 'Silverqueen', 12000, 'Images/silverqueen.jpeg')" 
+            class="btn btn-primary btn-sm">Tambah</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal14')">Detail</button>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Modal Product 14 - Silverqueen -->
+<div class="product-modal" id="productModal14">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('productModal14')">&times;</span>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="modal-product-img">
+              <img src="/api/placeholder/400/400" alt="Silverqueen">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="modal-product-info">
+              <h3 class="modal-product-title">Silverqueen</h3>
+              <div class="modal-product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="ms-2 text-muted">(4.9)</span>
+              </div>
+              <div class="modal-product-price">Rp12.000</div>
+              <div class="modal-product-description">
+                <h5>Deskripsi Produk:</h5>
+                <p>Cokelat susu premium dengan tekstur lembut dan rasa yang kaya. Cocok untuk dinikmati kapan saja atau sebagai hadiah istimewa.</p>
+                <ul>
+                  <li>Cokelat susu premium</li>
+                  <li>Tekstur lembut di mulut</li>
+                  <li>Kemasan 65g</li>
+                  <li>Tanpa pemanis buatan</li>
+                  <li>Cokelat asli berkualitas tinggi</li>
+                </ul>
+              </div>
+              <div class="modal-product-nutrition">
+                <h5>Informasi Gizi (per 25g):</h5>
+                <table class="table table-sm">
+                  <tr><td>Energi</td><td>135 kkal</td></tr>
+                  <tr><td>Protein</td><td>2g</td></tr>
+                  <tr><td>Lemak</td><td>8g</td></tr>
+                  <tr><td>Karbohidrat</td><td>15g</td></tr>
+                  <tr><td>Gula</td><td>13g</td></tr>
+                </table>
+              </div>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="qty-btn decrease">-</button>
+                  <input type="number" value="1" min="1" class="qty-input">
+                  <button class="qty-btn increase">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity(14, 'Silverqueen', 12000, 'Images/silverqueen.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 15 - Indomie Goreng -->
+<div class="col-sm-2 col-6">
+    <div class="product-card small-card">
+        <div class="product-img">
+            <img src="/api/placeholder/200/200" alt="Indomie Goreng" class="img-fluid">
+        </div>
+        <div class="product-info">
+            <h5 class="product-title">Indomie Goreng</h5>
+            <div class="product-price">Rp3.500</div>
+            <div class="product-rating small-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-1 text-muted small-text">(4.7)</span>
+            </div>
+            <button onclick="addToCart(15, 'Indomie Goreng', 3500, 'Images/indomie_goreng.jpeg')" 
+            class="btn btn-primary btn-sm">Tambah</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal15')">Detail</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Product 15 - Indomie Goreng -->
+<div class="product-modal" id="productModal15">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('productModal15')">&times;</span>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="modal-product-img">
+                        <img src="/api/placeholder/400/400" alt="Indomie Goreng">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="modal-product-info">
+                        <h3 class="modal-product-title">Indomie Goreng</h3>
+                        <div class="modal-product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="ms-2 text-muted">(4.7)</span>
+                        </div>
+                        <div class="modal-product-price">Rp3.500</div>
+                        <div class="modal-product-description">
+                            <h5>Deskripsi Produk:</h5>
+                            <p>Mi instan goreng dengan bumbu khas Indonesia yang nikmat. Sajian praktis yang bisa dinikmati kapan saja.</p>
+                            <ul>
+                                <li>Mi goreng instan berkualitas</li>
+                                <li>Bumbu khas original</li>
+                                <li>Kemasan 85g</li>
+                                <li>Penyajian cepat (3 menit)</li>
+                                <li>Tanpa bahan pengawet</li>
+                            </ul>
+                        </div>
+                        <div class="modal-product-nutrition">
+                            <h5>Informasi Gizi (per kemasan):</h5>
+                            <table class="table table-sm">
+                                <tr><td>Energi</td><td>370 kkal</td></tr>
+                                <tr><td>Protein</td><td>7g</td></tr>
+                                <tr><td>Lemak</td><td>14g</td></tr>
+                                <tr><td>Karbohidrat</td><td>52g</td></tr>
+                                <tr><td>Garam</td><td>1.8g</td></tr>
+                            </table>
+                        </div>
+                        <div class="modal-product-actions">
+                            <div class="quantity-selector">
+                                <button class="qty-btn decrease">-</button>
+                                <input type="number" value="1" min="1" class="qty-input">
+                                <button class="qty-btn increase">+</button>
+                            </div>
+                            <button onclick="addToCartWithQuantity(15, 'Indomie Goreng', 3500, 'Images/indomie_goreng.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product 16 - Pocky Chocolate -->
+<div class="col-sm-2 col-6">
+    <div class="product-card small-card">
+        <div class="product-img">
+            <img src="/api/placeholder/200/200" alt="Pocky Chocolate" class="img-fluid">
+        </div>
+        <div class="product-info">
+            <h5 class="product-title">Pocky Chocolate</h5>
+            <div class="product-price">Rp15.000</div>
+            <div class="product-rating small-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="ms-1 text-muted small-text">(4.2)</span>
+            </div>
+            <button onclick="addToCart(16, 'Pocky Chocolate', 15000, 'Images/pocky_chocolate.jpeg')" 
+            class="btn btn-primary btn-sm">Tambah</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal16')">Detail</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Product 16 - Pocky Chocolate -->
+<div class="product-modal" id="productModal16">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('productModal16')">&times;</span>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="modal-product-img">
+                        <img src="/api/placeholder/400/400" alt="Pocky Chocolate">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="modal-product-info">
+                        <h3 class="modal-product-title">Pocky Chocolate</h3>
+                        <div class="modal-product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="ms-2 text-muted">(4.2)</span>
+                        </div>
+                        <div class="modal-product-price">Rp15.000</div>
+                        <div class="modal-product-description">
+                            <h5>Deskripsi Produk:</h5>
+                            <p>Biskuit stik renyah yang dilapisi cokelat lezat dari Jepang. Camilan ringan yang cocok untuk segala suasana.</p>
+                            <ul>
+                                <li>Biskuit stik dengan lapisan cokelat</li>
+                                <li>Tekstur renyah dan lembut</li>
+                                <li>Kemasan 45g (1 box)</li>
+                                <li>Tanpa pewarna buatan</li>
+                                <li>Produk impor asli Jepang</li>
+                            </ul>
+                        </div>
+                        <div class="modal-product-nutrition">
+                            <h5>Informasi Gizi (per 10g):</h5>
+                            <table class="table table-sm">
+                                <tr><td>Energi</td><td>52 kkal</td></tr>
+                                <tr><td>Protein</td><td>0.8g</td></tr>
+                                <tr><td>Lemak</td><td>2.2g</td></tr>
+                                <tr><td>Karbohidrat</td><td>7.3g</td></tr>
+                                <tr><td>Gula</td><td>3.5g</td></tr>
+                            </table>
+                        </div>
+                        <div class="modal-product-actions">
+                            <div class="quantity-selector">
+                                <button class="qty-btn decrease">-</button>
+                                <input type="number" value="1" min="1" class="qty-input">
+                                <button class="qty-btn increase">+</button>
+                            </div>
+                            <button onclick="addToCartWithQuantity(16, 'Pocky Chocolate', 15000, 'Images/pocky_chocolate.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product 17 - Oreo Original -->
+<div class="col-sm-2 col-6">
+    <div class="product-card small-card">
+        <div class="product-img">
+            <img src="/api/placeholder/200/200" alt="Oreo Original" class="img-fluid">
+        </div>
+        <div class="product-info">
+            <h5 class="product-title">Oreo Original</h5>
+            <div class="product-price">Rp10.500</div>
+            <div class="product-rating small-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="ms-1 text-muted small-text">(4.8)</span>
+            </div>
+            <button onclick="addToCart(17, 'Oreo Original', 10500, 'Images/oreo_original.jpeg')" 
+            class="btn btn-primary btn-sm">Tambah</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal17')">Detail</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Product 17 - Oreo Original -->
+<div class="product-modal" id="productModal17">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('productModal17')">&times;</span>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="modal-product-img">
+                        <img src="/api/placeholder/400/400" alt="Oreo Original">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="modal-product-info">
+                        <h3 class="modal-product-title">Oreo Original</h3>
+                        <div class="modal-product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="ms-2 text-muted">(4.8)</span>
+                        </div>
+                        <div class="modal-product-price">Rp10.500</div>
+                        <div class="modal-product-description">
+                            <h5>Deskripsi Produk:</h5>
+                            <p>Biskuit cokelat klasik dengan krim vanila lembut di tengahnya. Sempurna untuk dinikmati dengan susu.</p>
+                            <ul>
+                                <li>Biskuit cokelat dengan krim vanila</li>
+                                <li>Tekstur renyah yang khas</li>
+                                <li>Kemasan 133g (12 keping)</li>
+                                <li>Cocok untuk dipadukan dengan susu</li>
+                                <li>Tanpa pewarna buatan</li>
+                            </ul>
+                        </div>
+                        <div class="modal-product-nutrition">
+                            <h5>Informasi Gizi (per 3 keping):</h5>
+                            <table class="table table-sm">
+                                <tr><td>Energi</td><td>160 kkal</td></tr>
+                                <tr><td>Protein</td><td>1g</td></tr>
+                                <tr><td>Lemak</td><td>7g</td></tr>
+                                <tr><td>Karbohidrat</td><td>25g</td></tr>
+                                <tr><td>Gula</td><td>14g</td></tr>
+                            </table>
+                        </div>
+                        <div class="modal-product-actions">
+                            <div class="quantity-selector">
+                                <button class="qty-btn decrease">-</button>
+                                <input type="number" value="1" min="1" class="qty-input">
+                                <button class="qty-btn increase">+</button>
+                            </div>
+                            <button onclick="addToCartWithQuantity(17, 'Oreo Original', 10500, 'Images/oreo_original.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product 18 - Chitato -->
+<div class="col-sm-2 col-6">
+    <div class="product-card small-card">
+        <div class="product-img">
+            <img src="/api/placeholder/200/200" alt="Chitato" class="img-fluid">
+        </div>
+        <div class="product-info">
+            <h5 class="product-title">Chitato</h5>
+            <div class="product-price">Rp8.000</div>
+            <div class="product-rating small-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-1 text-muted small-text">(4.5)</span>
+            </div>
+            <button onclick="addToCart(18, 'Chitato', 8000, 'Images/chitato.jpeg')" 
+            class="btn btn-primary btn-sm">Tambah</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="openModal('productModal18')">Detail</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Product 18 - Chitato -->
+<div class="product-modal" id="productModal18">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('productModal18')">&times;</span>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="modal-product-img">
+                        <img src="/api/placeholder/400/400" alt="Chitato">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="modal-product-info">
+                        <h3 class="modal-product-title">Chitato</h3>
+                        <div class="modal-product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="ms-2 text-muted">(4.5)</span>
+                        </div>
+                        <div class="modal-product-price">Rp8.000</div>
+                        <div class="modal-product-description">
+                            <h5>Deskripsi Produk:</h5>
+                            <p>Keripik kentang dengan rasa original yang gurih dan renyah. Camilan yang cocok untuk segala suasana.</p>
+                            <ul>
+                                <li>Keripik kentang asli</li>
+                                <li>Rasa original yang gurih</li>
+                                <li>Kemasan 65g</li>
+                                <li>Tekstur renyah khas</li>
+                                <li>Tanpa MSG tambahan</li>
+                            </ul>
+                        </div>
+                        <div class="modal-product-nutrition">
+                            <h5>Informasi Gizi (per 30g):</h5>
+                            <table class="table table-sm">
+                                <tr><td>Energi</td><td>160 kkal</td></tr>
+                                <tr><td>Protein</td><td>2g</td></tr>
+                                <tr><td>Lemak</td><td>10g</td></tr>
+                                <tr><td>Karbohidrat</td><td>15g</td></tr>
+                                <tr><td>Garam</td><td>0.3g</td></tr>
+                            </table>
+                        </div>
+                        <div class="modal-product-actions">
+                            <div class="quantity-selector">
+                                <button class="qty-btn decrease">-</button>
+                                <input type="number" value="1" min="1" class="qty-input">
+                                <button class="qty-btn increase">+</button>
+                            </div>
+                            <button onclick="addToCartWithQuantity(18, 'Chitato', 8000, 'Images/chitato.jpeg')" class="btn btn-add-modal">Tambah Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+    <!-- Toastify untuk notifikasi -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- Footer -->
+    <footer class="bg-blue py-4">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4 mb-4 mb-md-0">
+                  <h4>Follow us on</h4>
+                  <div class="social-icons">
+                      <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                      <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+                      <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                  </div>
+                  <div class="mt-3">
+                      <p>Subscribe to our newsletter</p>
+                      <div class="input-group">
+                          <input type="email" class="form-control" placeholder="Your email">
+                          <button class="btn btn-primary" type="button">Subscribe</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                  <h4>Useful Links</h4>
+                  <ul class="list-unstyled">
+                      <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Grocies Privacy Policy</a></li>
+                      <li><a href="#"><i class="fas fa-chevron-right me-2"></i>FAQ</a></li>
+                      <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Terms and Conditions</a></li>
+                      <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Shipping Policy</a></li>
+                      <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Returns & Refunds</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                  <h4>Browse our Products</h4>
+                  <ul class="list-unstyled">
+                      <li><a href="dairy.html"><i class="fas fa-chevron-right me-2"></i>Dairy Products</a></li>
+                      <li><a href="vegetables.html"><i class="fas fa-chevron-right me-2"></i>Vegetables</a></li>
+                      <li><a href="cosmetics.html"><i class="fas fa-chevron-right me-2"></i>Cosmetics and Skin Care</a></li>
+                      <li><a href="beverages.html"><i class="fas fa-chevron-right me-2"></i>Beverages</a></li>
+                      <li><a href="snacks.html"><i class="fas fa-chevron-right me-2"></i>Snacks</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="text-center mt-4 copyright">
+              <p class="mb-0">Tewuneed Marketplace © 2025 All Rights Reserved</p>
+              <div class="payment-methods mt-2">
+                  <i class="fab fa-cc-visa fa-2x me-2"></i>
+                  <i class="fab fa-cc-mastercard fa-2x me-2"></i>
+                  <i class="fab fa-cc-paypal fa-2x me-2"></i>
+                  <i class="fab fa-cc-amazon-pay fa-2x"></i>
+              </div>
+          </div>
+      </div>
+  </footer>

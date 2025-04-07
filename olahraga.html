@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEWUNEED - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/olahraga.css">
+    <!-- Custom js -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/olahraga.js"></script>
+
+</head>
+<body>
+    <!-- Header -->
+<header class="bg-white shadow-sm">
+  <!-- Top bar -->
+  <div class="container mx-auto px-4 py-3">
+      <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <a href="home.html" class="logo-text">
+              <span class="text-blue-600">TEWU</span><span class="text-yellow-500">NEED</span>
+          </a>
+          
+          <!-- Search Bar -->
+          <div class="hidden md:block relative">
+              <input type="text" placeholder="Search Products" class="search-bar pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none w-64">
+              <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+          
+          <!-- User Links -->
+          <div class="flex items-center space-x-6">
+
+            <!-- Keranjang Icon -->
+    <div class="cart-icon-container">
+        <a href="keranjang.html" onclick="showPage('cart'); return false;" class="text-decoration-none">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </a>
+    </div>
+
+
+              <!-- User Links -->
+              <div class="hidden md:flex items-center space-x-4">
+                  <a href="" class="text-gray-700 hover:text-blue-600">My Account</a>
+                  <a href="Login.html" class="text-gray-700 hover:text-blue-600">Sign In</a>
+                  <a href="Login.html" class="text-gray-700 hover:text-blue-600">Register</a>
+              </div>
+              
+              <!-- Mobile Menu Toggle -->
+              <button class="md:hidden text-gray-700 focus:outline-none">
+                  <i class="fas fa-bars text-xl"></i>
+              </button>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Navigation -->
+  <nav class="bg-gray-50 shadow-inner">
+      <div class="container mx-auto px-4">
+          <div class="flex justify-center md:justify-start space-x-8 py-3">
+              <a href="home.html" class="nav-link text-gray-700 hover:text-blue-600">Home</a>
+              <a href="dairy.html" class="nav-link text-gray-700 hover:text-blue-600">Dairy Products</a>
+              <a href="vegetables.html" class="nav-link text-gray-700 hover:text-blue-600">Vegetables</a>
+              <a href="cosmetics.html" class="nav-link text-gray-700 hover:text-blue-600">Cosmetics and Skin Care</a>
+              <a href="olahraga.html" class="nav-link text-gray-700 hover:text-blue-600 active">Sports</a>
+          </div>
+      </div>
+  </nav>
+</header>
+</head>
+<body>       
+    <!-- Main Content -->
+    <div class="container my-4">
+        <section id="dairy">
+            <h1 class="mb-3">Sports Equipment</h1>
+            <p class="lead">Explore our assortment of quality sports and fitness equipment sourced from trusted brands. From cardio machines to strength training equipment and sports accessories, find all your fitness essentials here.</p>
+        </section>
+
+        <div class="container my-4">
+            <!-- Fitness Equipment Section -->
+<h3 class="mb-3">Alat Olahraga</h3>
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+    <!-- Product 1 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/fitness1.jpeg" class="card-img-top" alt="Matras Yoga Anti Slip">
+            <div class="card-body">
+                <h5 class="card-title">Matras Yoga Anti Slip</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> 1.2kg</div>
+                    <div><i class="fas fa-star me-1"></i> 4.7 (120 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> Ketebalan 8mm</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 150.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal1">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(1, 'Matras Yoga Anti Slip', 150000, 'Images/Sports/fitness1.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 1 -->
+    <div class="modal fade" id="detailModal1" tabindex="-1" aria-labelledby="detailModal1Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal1Label">Matras Yoga Anti Slip</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/fitness1.jpeg" class="img-fluid mb-3" alt="Matras Yoga Anti Slip">
+                    <p><strong>Deskripsi:</strong> Matras yoga dengan permukaan anti slip dan material PVC berkualitas tinggi.</p>
+                    <p><strong>Manfaat:</strong> Memberikan kenyamanan dan stabilitas saat berolahraga, cocok untuk berbagai jenis yoga.</p>
+                    <p><strong>Stok Tersedia:</strong> 50 pcs</p>
+                    <p><strong>Harga:</strong> Rp 150.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(1, 'Matras Yoga Anti Slip', 150000, 'Images/Sports/fitness1.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/fitness2.jpeg" class="card-img-top" alt="Dumbell Set 5kg">
+            <div class="card-body">
+                <h5 class="card-title">Dumbell Set 5kg</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> 5kg</div>
+                    <div><i class="fas fa-star me-1"></i> 4.5 (95 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> 2 buah (2.5kg x 2)</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 250.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal2">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(2, 'Dumbell Set 5kg', 250000, 'Images/Sports/fitness2.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 2 -->
+    <div class="modal fade" id="detailModal2" tabindex="-1" aria-labelledby="detailModal2Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal2Label">Dumbell Set 5kg</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/fitness2.jpeg" class="img-fluid mb-3" alt="Dumbell Set 5kg">
+                    <p><strong>Deskripsi:</strong> Set dumbell besi dilapisi karet dengan grip yang nyaman.</p>
+                    <p><strong>Manfaat:</strong> Untuk latihan beban di rumah, membentuk otot lengan dan tubuh.</p>
+                    <p><strong>Stok Tersedia:</strong> 30 set</p>
+                    <p><strong>Harga:</strong> Rp 250.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(2, 'Dumbell Set 5kg', 250000, 'Images/Sports/fitness2.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/fitness3.jpeg" class="card-img-top" alt="Tali Skipping PVC">
+            <div class="card-body">
+                <h5 class="card-title">Tali Skipping PVC</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> 300g</div>
+                    <div><i class="fas fa-star me-1"></i> 4.3 (150 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> Panjang 2.8m</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 75.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal3">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(3, 'Tali Skipping PVC', 75000, 'Images/Sports/fitness3.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 3 -->
+    <div class="modal fade" id="detailModal3" tabindex="-1" aria-labelledby="detailModal3Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal3Label">Tali Skipping PVC</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/fitness3.jpeg" class="img-fluid mb-3" alt="Tali Skipping PVC">
+                    <p><strong>Deskripsi:</strong> Tali skipping dengan material PVC kuat dan grip berbusa yang nyaman.</p>
+                    <p><strong>Manfaat:</strong> Untuk latihan kardio, membakar kalori, dan melatih koordinasi tubuh.</p>
+                    <p><strong>Stok Tersedia:</strong> 100 pcs</p>
+                    <p><strong>Harga:</strong> Rp 75.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(3, 'Tali Skipping PVC', 75000, 'Images/Sports/fitness3.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/fitness4.jpeg" class="card-img-top" alt="Pull Up Bar Pintu">
+            <div class="card-body">
+                <h5 class="card-title">Pull Up Bar Pintu</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> 1.5kg</div>
+                    <div><i class="fas fa-star me-1"></i> 4.6 (80 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> Beban maks 100kg</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 120.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal4">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(4, 'Pull Up Bar Pintu', 120000, 'Images/Sports/fitness4.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 4 -->
+    <div class="modal fade" id="detailModal4" tabindex="-1" aria-labelledby="detailModal4Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal4Label">Pull Up Bar Pintu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/fitness4.jpeg" class="img-fluid mb-3" alt="Pull Up Bar Pintu">
+                    <p><strong>Deskripsi:</strong> Alat pull up yang mudah dipasang di pintu tanpa perlu bor.</p>
+                    <p><strong>Manfaat:</strong> Untuk latihan pull up, chin up, dan push up di rumah.</p>
+                    <p><strong>Stok Tersedia:</strong> 40 pcs</p>
+                    <p><strong>Harga:</strong> Rp 120.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(4, 'Pull Up Bar Pintu', 120000, 'Images/Sports/fitness4.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/fitness5.jpeg" class="card-img-top" alt="Resistance Band Set">
+            <div class="card-body">
+                <h5 class="card-title">Resistance Band Set</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> 800g</div>
+                    <div><i class="fas fa-star me-1"></i> 4.4 (65 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> 5 level resistensi</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 180.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal5">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(5, 'Resistance Band Set', 180000, 'Images/Sports/fitness5.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 5 -->
+    <div class="modal fade" id="detailModal5" tabindex="-1" aria-labelledby="detailModal5Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal5Label">Resistance Band Set</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/fitness5.jpeg" class="img-fluid mb-3" alt="Resistance Band Set">
+                    <p><strong>Deskripsi:</strong> Set resistance band dengan 5 level resistensi berbeda.</p>
+                    <p><strong>Manfaat:</strong> Untuk latihan kekuatan, fleksibilitas, dan rehabilitasi otot.</p>
+                    <p><strong>Stok Tersedia:</strong> 25 set</p>
+                    <p><strong>Harga:</strong> Rp 180.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(5, 'Resistance Band Set', 180000, 'Images/Sports/fitness5.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/fitness6.jpeg" class="card-img-top" alt="Sepeda Statis Lipat">
+            <div class="card-body">
+                <h5 class="card-title">Sepeda Statis Lipat</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> 15kg</div>
+                    <div><i class="fas fa-star me-1"></i> 4.2 (45 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> 8 level resistensi</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 1.250.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal6">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(6, 'Sepeda Statis Lipat', 1250000, 'Images/Sports/fitness6.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 6 -->
+    <div class="modal fade" id="detailModal6" tabindex="-1" aria-labelledby="detailModal6Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal6Label">Sepeda Statis Lipat</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/fitness6.jpeg" class="img-fluid mb-3" alt="Sepeda Statis Lipat">
+                    <p><strong>Deskripsi:</strong> Sepeda statis dengan desain lipat praktis dan monitor digital.</p>
+                    <p><strong>Manfaat:</strong> Untuk latihan kardio di rumah, membakar kalori, dan menjaga kesehatan jantung.</p>
+                    <p><strong>Stok Tersedia:</strong> 15 unit</p>
+                    <p><strong>Harga:</strong> Rp 1.250.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(6, 'Sepeda Statis Lipat', 1250000, 'Images/Sports/fitness6.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/fitness7.jpeg" class="card-img-top" alt="Set Alat Push Up">
+            <div class="card-body">
+                <h5 class="card-title">Set Alat Push Up</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> 1kg</div>
+                    <div><i class="fas fa-star me-1"></i> 4.0 (55 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> Rotasi 360°</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 85.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal7">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(7, 'Set Alat Push Up', 85000, 'Images/Sports/fitness7.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 7 -->
+    <div class="modal fade" id="detailModal7" tabindex="-1" aria-labelledby="detailModal7Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal7Label">Set Alat Push Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/fitness7.jpeg" class="img-fluid mb-3" alt="Set Alat Push Up">
+                    <p><strong>Deskripsi:</strong> Alat bantu push up dengan grip ergonomis dan bisa berputar 360°.</p>
+                    <p><strong>Manfaat:</strong> Mengurangi tekanan pada pergelangan tangan dan meningkatkan efektivitas push up.</p>
+                    <p><strong>Stok Tersedia:</strong> 60 set</p>
+                    <p><strong>Harga:</strong> Rp 85.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(7, 'Set Alat Push Up', 85000, 'Images/Sports/fitness7.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+            <!-- Strength Training Section -->
+<h3 class="mb-3 mt-5">Strength Training</h3>
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+    <!-- Product 8 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/strength1.jpeg" class="card-img-top" alt="Dumbbell Set, 2-20kg">
+            <div class="card-body">
+                <h5 class="card-title">Dumbbell Set</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> 2-20kg</div>
+                    <div><i class="fas fa-star me-1"></i> 4.7 (124 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> Alat beban tangan</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 3.250.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal8">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(8, 'Dumbbell Set, 2-20kg', 3250000, 'Images/Sports/strength1.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 8 -->
+    <div class="modal fade" id="detailModal8" tabindex="-1" aria-labelledby="detailModal8Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal8Label">Dumbbell Set, 2-20kg</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/strength1.jpeg" class="img-fluid mb-3" alt="Dumbbell Set, 2-20kg">
+                    <p><strong>Deskripsi:</strong> Set dumbbell dengan berat 2-20kg untuk latihan kekuatan dan pembentukan otot di rumah.</p>
+                    <p><strong>Manfaat:</strong> Membantu membangun massa otot, meningkatkan kekuatan, dan meningkatkan metabolisme tubuh.</p>
+                    <p><strong>Stok Tersedia:</strong> 15 set</p>
+                    <p><strong>Harga:</strong> Rp 3.250.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(8, 'Dumbbell Set, 2-20kg', 3250000, 'Images/Sports/strength1.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 9 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/strength2.jpeg" class="card-img-top" alt="Kettlebell, 16kg">
+            <div class="card-body">
+                <h5 class="card-title">Kettlebell</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> 16kg</div>
+                    <div><i class="fas fa-star me-1"></i> 4.6 (92 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> Beban bentuk bola</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 485.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal9">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(9, 'Kettlebell, 16kg', 485000, 'Images/Sports/strength2.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 9 -->
+    <div class="modal fade" id="detailModal9" tabindex="-1" aria-labelledby="detailModal9Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal9Label">Kettlebell, 16kg</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/strength2.jpeg" class="img-fluid mb-3" alt="Kettlebell, 16kg">
+                    <p><strong>Deskripsi:</strong> Kettlebell dengan berat 16kg terbuat dari besi berkualitas tinggi dengan pegangan ergonomis.</p>
+                    <p><strong>Manfaat:</strong> Efektif untuk latihan kardio dan kekuatan sekaligus, membantu pembakaran kalori dan pembentukan otot.</p>
+                    <p><strong>Stok Tersedia:</strong> 25 pcs</p>
+                    <p><strong>Harga:</strong> Rp 485.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(9, 'Kettlebell, 16kg', 485000, 'Images/Sports/strength2.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 10 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/strength3.jpeg" class="card-img-top" alt="Barbell Set, 50kg">
+            <div class="card-body">
+                <h5 class="card-title">Barbell Set</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> 50kg</div>
+                    <div><i class="fas fa-star me-1"></i> 4.8 (78 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> Set beban batang</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 1.850.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal10">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(10, 'Barbell Set, 50kg', 1850000, 'Images/Sports/strength3.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 10 -->
+    <div class="modal fade" id="detailModal10" tabindex="-1" aria-labelledby="detailModal10Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal10Label">Barbell Set, 50kg</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/strength3.jpeg" class="img-fluid mb-3" alt="Barbell Set, 50kg">
+                    <p><strong>Deskripsi:</strong> Set barbell dengan total berat 50kg termasuk batang Olympic dan piringan besi berbagai ukuran.</p>
+                    <p><strong>Manfaat:</strong> Ideal untuk latihan beban komprehensif untuk seluruh tubuh, cocok untuk pemula hingga atlet.</p>
+                    <p><strong>Stok Tersedia:</strong> 8 set</p>
+                    <p><strong>Harga:</strong> Rp 1.850.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(10, 'Barbell Set, 50kg', 1850000, 'Images/Sports/strength3.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 11 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/strength4.jpeg" class="card-img-top" alt="Resistance Bands, Set of 5">
+            <div class="card-body">
+                <h5 class="card-title">Resistance Bands</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> Set of 5</div>
+                    <div><i class="fas fa-star me-1"></i> 4.5 (156 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> Karet elastis latihan</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 250.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal11">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(11, 'Resistance Bands, Set of 5', 250000, 'Images/Sports/strength4.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 11 -->
+    <div class="modal fade" id="detailModal11" tabindex="-1" aria-labelledby="detailModal11Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal11Label">Resistance Bands, Set of 5</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/strength4.jpeg" class="img-fluid mb-3" alt="Resistance Bands, Set of 5">
+                    <p><strong>Deskripsi:</strong> Set 5 resistance bands dengan tingkat ketahanan berbeda untuk berbagai latihan kekuatan.</p>
+                    <p><strong>Manfaat:</strong> Praktis untuk latihan di rumah atau bepergian, efektif untuk rehabilitasi dan penguatan otot.</p>
+                    <p><strong>Stok Tersedia:</strong> 45 set</p>
+                    <p><strong>Harga:</strong> Rp 250.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(11, 'Resistance Bands, Set of 5', 250000, 'Images/Sports/strength4.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 12 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/strength5.jpeg" class="card-img-top" alt="Power Rack with Pull-up Bar">
+            <div class="card-body">
+                <h5 class="card-title">Power Rack</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> Dengan Pull-up Bar</div>
+                    <div><i class="fas fa-star me-1"></i> 4.9 (65 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> Rak latihan multifungsi</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 4.500.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal12">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(12, 'Power Rack with Pull-up Bar', 4500000, 'Images/Sports/strength5.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 12 -->
+    <div class="modal fade" id="detailModal12" tabindex="-1" aria-labelledby="detailModal12Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal12Label">Power Rack with Pull-up Bar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/strength5.jpeg" class="img-fluid mb-3" alt="Power Rack with Pull-up Bar">
+                    <p><strong>Deskripsi:</strong> Power rack dengan pull-up bar terbuat dari baja kokoh untuk latihan beban dengan aman di rumah.</p>
+                    <p><strong>Manfaat:</strong> Memungkinkan berbagai latihan kekuatan seperti squat, bench press, dan pull-up dalam satu alat.</p>
+                    <p><strong>Stok Tersedia:</strong> 5 unit</p>
+                    <p><strong>Harga:</strong> Rp 4.500.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(12, 'Power Rack with Pull-up Bar', 4500000, 'Images/Sports/strength5.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 13 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/strength6.jpeg" class="card-img-top" alt="Weight Lifting Gloves, Pair">
+            <div class="card-body">
+                <h5 class="card-title">Weight Lifting Gloves</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> 1 Pair</div>
+                    <div><i class="fas fa-star me-1"></i> 4.4 (112 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> Sarung tangan fitness</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 175.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal13">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(13, 'Weight Lifting Gloves, Pair', 175000, 'Images/Sports/strength6.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 13 -->
+    <div class="modal fade" id="detailModal13" tabindex="-1" aria-labelledby="detailModal13Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal13Label">Weight Lifting Gloves, Pair</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/strength6.jpeg" class="img-fluid mb-3" alt="Weight Lifting Gloves, Pair">
+                    <p><strong>Deskripsi:</strong> Sarung tangan angkat beban dengan bantalan anti-selip dan dukungan pergelangan tangan.</p>
+                    <p><strong>Manfaat:</strong> Melindungi tangan dari kapalan, meningkatkan grip, dan mendukung pergelangan tangan saat angkat beban.</p>
+                    <p><strong>Stok Tersedia:</strong> 30 pasang</p>
+                    <p><strong>Harga:</strong> Rp 175.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(13, 'Weight Lifting Gloves, Pair', 175000, 'Images/Sports/strength6.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 14 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/strength7.jpeg" class="card-img-top" alt="Ab Roller Wheel">
+            <div class="card-body">
+                <h5 class="card-title">Ab Roller Wheel</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> Dengan matras</div>
+                    <div><i class="fas fa-star me-1"></i> 4.6 (98 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> Alat latihan perut</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 120.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal14">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(14, 'Ab Roller Wheel', 120000, 'Images/Sports/strength7.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 14 -->
+    <div class="modal fade" id="detailModal14" tabindex="-1" aria-labelledby="detailModal14Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal14Label">Ab Roller Wheel</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/strength7.jpeg" class="img-fluid mb-3" alt="Ab Roller Wheel">
+                    <p><strong>Deskripsi:</strong> Alat roller perut dengan roda ganda dan pegangan nyaman, dilengkapi matras lutut.</p>
+                    <p><strong>Manfaat:</strong> Efektif melatih otot perut, lengan, dan punggung dengan gerakan rolling yang terkontrol.</p>
+                    <p><strong>Stok Tersedia:</strong> 40 pcs</p>
+                    <p><strong>Harga:</strong> Rp 120.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(14, 'Ab Roller Wheel', 120000, 'Images/Sports/strength7.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 15 -->
+    <div class="col">
+        <div class="card h-100 product-card">
+            <img src="Images/Sports/strength8.jpeg" class="card-img-top" alt="Push-Up Bars, Pair">
+            <div class="card-body">
+                <h5 class="card-title">Push-Up Bars</h5>
+                <div class="product-details small text-muted mb-2">
+                    <div><i class="fas fa-weight me-1"></i> 1 Pair</div>
+                    <div><i class="fas fa-star me-1"></i> 4.3 (87 reviews)</div>
+                    <div><i class="fas fa-info-circle me-1"></i> Alat bantu push-up</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">Rp 95.000</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal15">
+                            Detail
+                        </button>
+                        <button onclick="addToCart(15, 'Push-Up Bars, Pair', 95000, 'Images/Sports/strength8.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Product 15 -->
+    <div class="modal fade" id="detailModal15" tabindex="-1" aria-labelledby="detailModal15Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModal15Label">Push-Up Bars, Pair</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Images/Sports/strength8.jpeg" class="img-fluid mb-3" alt="Push-Up Bars, Pair">
+                    <p><strong>Deskripsi:</strong> Sepasang pegangan push-up dengan pegangan ergonomis dan alas anti-slip.</p>
+                    <p><strong>Manfaat:</strong> Membantu posisi push-up yang lebih dalam, mengurangi tekanan pada pergelangan tangan, dan melatih otot dada lebih efektif.</p>
+                    <p><strong>Stok Tersedia:</strong> 35 pasang</p>
+                    <p><strong>Harga:</strong> Rp 95.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button onclick="addToCart(15, 'Push-Up Bars, Pair', 95000, 'Images/Sports/strength8.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+           <!-- Sports Accessories Section -->
+<div class="container">
+    <h3 class="mb-3 mt-5">Sports Accessories</h3>
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+        <!-- Product 16 -->
+        <div class="col">
+            <div class="card h-100 product-card">
+                <img src="Images/Sports/accessory1.jpeg" class="card-img-top" alt="Bola Basket Mini">
+                <div class="card-body">
+                    <h5 class="card-title">Bola Basket Mini</h5>
+                    <div class="product-details small text-muted mb-2">
+                        <div><i class="fas fa-weight me-1"></i> 500g</div>
+                        <div><i class="fas fa-star me-1"></i> 4.3 (65 reviews)</div>
+                        <div><i class="fas fa-info-circle me-1"></i> Ukuran 5</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-primary fw-bold">Rp 125.000</span>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal16">
+                                Detail
+                            </button>
+                            <button onclick="addToCart(16, 'Bola Basket Mini, 500g', 125000, 'Images/Sports/accessory1.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Product 16 -->
+        <div class="modal fade" id="detailModal16" tabindex="-1" aria-labelledby="detailModal16Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailModal16Label">Bola Basket Mini, 500g</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="Images/Sports/accessory1.jpeg" class="img-fluid mb-3" alt="Bola Basket Mini">
+                        <p><strong>Deskripsi:</strong> Bola basket mini dengan ukuran 5, cocok untuk anak-anak atau penggunaan rekreasi.</p>
+                        <p><strong>Manfaat:</strong> Ideal untuk latihan dasar basket, permainan santai di rumah atau sekolah.</p>
+                        <p><strong>Stok Tersedia:</strong> 45 pcs</p>
+                        <p><strong>Harga:</strong> Rp 125.000</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button onclick="addToCart(16, 'Bola Basket Mini, 500g', 125000, 'Images/Sports/accessory1.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 17 -->
+        <div class="col">
+            <div class="card h-100 product-card">
+                <img src="Images/Sports/accessory2.jpeg" class="card-img-top" alt="Bola Sepak Karet">
+                <div class="card-body">
+                    <h5 class="card-title">Bola Sepak Karet</h5>
+                    <div class="product-details small text-muted mb-2">
+                        <div><i class="fas fa-weight me-1"></i> 350g</div>
+                        <div><i class="fas fa-star me-1"></i> 4.1 (92 reviews)</div>
+                        <div><i class="fas fa-info-circle me-1"></i> Tahan lama</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-primary fw-bold">Rp 85.000</span>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal17">
+                                Detail
+                            </button>
+                            <button onclick="addToCart(17, 'Bola Sepak Karet, 350g', 85000, 'Images/Sports/accessory2.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Product 17 -->
+        <div class="modal fade" id="detailModal17" tabindex="-1" aria-labelledby="detailModal17Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailModal17Label">Bola Sepak Karet, 350g</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="Images/Sports/accessory2.jpeg" class="img-fluid mb-3" alt="Bola Sepak Karet">
+                        <p><strong>Deskripsi:</strong> Bola sepak dari bahan karet berkualitas yang tahan lama dan nyaman digunakan.</p>
+                        <p><strong>Manfaat:</strong> Cocok untuk latihan sepak bola dasar atau bermain santai di halaman rumah dan taman.</p>
+                        <p><strong>Stok Tersedia:</strong> 60 pcs</p>
+                        <p><strong>Harga:</strong> Rp 85.000</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button onclick="addToCart(17, 'Bola Sepak Karet, 350g', 85000, 'Images/Sports/accessory2.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 18 -->
+        <div class="col">
+            <div class="card h-100 product-card">
+                <img src="Images/Sports/accessory3.jpeg" class="card-img-top" alt="Raket Badminton Pemula">
+                <div class="card-body">
+                    <h5 class="card-title">Raket Badminton Pemula</h5>
+                    <div class="product-details small text-muted mb-2">
+                        <div><i class="fas fa-weight me-1"></i> 120g</div>
+                        <div><i class="fas fa-star me-1"></i> 4.4 (78 reviews)</div>
+                        <div><i class="fas fa-info-circle me-1"></i> Ringan</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-primary fw-bold">Rp 95.000</span>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal18">
+                                Detail
+                            </button>
+                            <button onclick="addToCart(18, 'Raket Badminton Pemula, 120g', 95000, 'Images/Sports/accessory3.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Product 18 -->
+        <div class="modal fade" id="detailModal18" tabindex="-1" aria-labelledby="detailModal18Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailModal18Label">Raket Badminton Pemula, 120g</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="Images/Sports/accessory3.jpeg" class="img-fluid mb-3" alt="Raket Badminton Pemula">
+                        <p><strong>Deskripsi:</strong> Raket badminton ringan untuk pemula, dengan pegangan nyaman dan tali senar standar.</p>
+                        <p><strong>Manfaat:</strong> Ideal untuk pemula yang baru belajar badminton, mudah digunakan dan ringan.</p>
+                        <p><strong>Stok Tersedia:</strong> 35 pcs</p>
+                        <p><strong>Harga:</strong> Rp 95.000</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button onclick="addToCart(18, 'Raket Badminton Pemula, 120g', 95000, 'Images/Sports/accessory3.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 19 -->
+        <div class="col">
+            <div class="card h-100 product-card">
+                <img src="Images/Sports/accessory4.jpeg" class="card-img-top" alt="Set Shuttlecock (12 pcs)">
+                <div class="card-body">
+                    <h5 class="card-title">Set Shuttlecock</h5>
+                    <div class="product-details small text-muted mb-2">
+                        <div><i class="fas fa-weight me-1"></i> 12 pcs</div>
+                        <div><i class="fas fa-star me-1"></i> 4.2 (56 reviews)</div>
+                        <div><i class="fas fa-info-circle me-1"></i> Kualitas latihan</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-primary fw-bold">Rp 65.000</span>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal19">
+                                Detail
+                            </button>
+                            <button onclick="addToCart(19, 'Set Shuttlecock (12 pcs)', 65000, 'Images/Sports/accessory4.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Product 19 -->
+        <div class="modal fade" id="detailModal19" tabindex="-1" aria-labelledby="detailModal19Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailModal19Label">Set Shuttlecock (12 pcs)</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="Images/Sports/accessory4.jpeg" class="img-fluid mb-3" alt="Set Shuttlecock (12 pcs)">
+                        <p><strong>Deskripsi:</strong> Set 12 shuttlecock dengan kualitas standar latihan, cocok untuk penggunaan sehari-hari.</p>
+                        <p><strong>Manfaat:</strong> Tahan lama untuk penggunaan rekreasi dan latihan rutin, nilai ekonomis untuk satu set.</p>
+                        <p><strong>Stok Tersedia:</strong> 25 set</p>
+                        <p><strong>Harga:</strong> Rp 65.000</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button onclick="addToCart(19, 'Set Shuttlecock (12 pcs)', 65000, 'Images/Sports/accessory4.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 20 -->
+        <div class="col">
+            <div class="card h-100 product-card">
+                <img src="Images/Sports/accessory5.jpeg" class="card-img-top" alt="Matras Yoga Dasar">
+                <div class="card-body">
+                    <h5 class="card-title">Matras Yoga Dasar</h5>
+                    <div class="product-details small text-muted mb-2">
+                        <div><i class="fas fa-weight me-1"></i> 800g</div>
+                        <div><i class="fas fa-star me-1"></i> 4.6 (102 reviews)</div>
+                        <div><i class="fas fa-info-circle me-1"></i> Anti slip</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-primary fw-bold">Rp 115.000</span>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal20">
+                                Detail
+                            </button>
+                            <button onclick="addToCart(20, 'Matras Yoga Dasar, 800g', 115000, 'Images/Sports/accessory5.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Product 20 -->
+        <div class="modal fade" id="detailModal20" tabindex="-1" aria-labelledby="detailModal20Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailModal20Label">Matras Yoga Dasar, 800g</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="Images/Sports/accessory5.jpeg" class="img-fluid mb-3" alt="Matras Yoga Dasar">
+                        <p><strong>Deskripsi:</strong> Matras yoga anti slip dengan ketebalan 5mm, nyaman untuk berbagai latihan.</p>
+                        <p><strong>Manfaat:</strong> Permukaan anti slip memberi aman saat berlatih, mudah dibersihkan dan ringan dibawa.</p>
+                        <p><strong>Stok Tersedia:</strong> 30 pcs</p>
+                        <p><strong>Harga:</strong> Rp 115.000</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button onclick="addToCart(20, 'Matras Yoga Dasar, 800g', 115000, 'Images/Sports/accessory5.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 21 -->
+        <div class="col">
+            <div class="card h-100 product-card">
+                <img src="Images/Sports/accessory6.jpeg" class="card-img-top" alt="Botol Air Olahraga">
+                <div class="card-body">
+                    <h5 class="card-title">Botol Air Olahraga</h5>
+                    <div class="product-details small text-muted mb-2">
+                        <div><i class="fas fa-weight me-1"></i> 750ml</div>
+                        <div><i class="fas fa-star me-1"></i> 4.7 (124 reviews)</div>
+                        <div><i class="fas fa-info-circle me-1"></i> BPA free</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-primary fw-bold">Rp 45.000</span>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal21">
+                                Detail
+                            </button>
+                            <button onclick="addToCart(21, 'Botol Air Olahraga, 750ml', 45000, 'Images/Sports/accessory6.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Product 21 -->
+        <div class="modal fade" id="detailModal21" tabindex="-1" aria-labelledby="detailModal21Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailModal21Label">Botol Air Olahraga, 750ml</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="Images/Sports/accessory6.jpeg" class="img-fluid mb-3" alt="Botol Air Olahraga">
+                        <p><strong>Deskripsi:</strong> Botol minum olahraga tahan bocor dengan kapasitas 750ml, bebas BPA, dengan sedotan lipat.</p>
+                        <p><strong>Manfaat:</strong> Memastikan hidrasi yang baik saat berolahraga, mudah dibawa, dan tidak mengandung bahan berbahaya.</p>
+                        <p><strong>Stok Tersedia:</strong> 85 pcs</p>
+                        <p><strong>Harga:</strong> Rp 45.000</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button onclick="addToCart(21, 'Botol Air Olahraga, 750ml', 45000, 'Images/Sports/accessory6.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 22 -->
+        <div class="col">
+            <div class="card h-100 product-card">
+                <img src="Images/Sports/accessory7.jpeg" class="card-img-top" alt="Tali Lompat Sederhana">
+                <div class="card-body">
+                    <h5 class="card-title">Tali Lompat Sederhana</h5>
+                    <div class="product-details small text-muted mb-2">
+                        <div><i class="fas fa-weight me-1"></i> 100g</div>
+                        <div><i class="fas fa-star me-1"></i> 4.0 (48 reviews)</div>
+                        <div><i class="fas fa-info-circle me-1"></i> Pegangan nyaman</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-primary fw-bold">Rp 35.000</span>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary me-1" data-bs-toggle="modal" data-bs-target="#detailModal22">
+                                Detail
+                            </button>
+                            <button onclick="addToCart(22, 'Tali Lompat Sederhana, 100g', 35000, 'Images/Sports/accessory7.jpeg')" class="btn btn-sm btn-primary">+ Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Product 22 -->
+        <div class="modal fade" id="detailModal22" tabindex="-1" aria-labelledby="detailModal22Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailModal22Label">Tali Lompat Sederhana, 100g</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="Images/Sports/accessory7.jpeg" class="img-fluid mb-3" alt="Tali Lompat Sederhana">
+                        <p><strong>Deskripsi:</strong> Tali lompat dengan pegangan nyaman dan tali yang dapat disesuaikan panjangnya.</p>
+                        <p><strong>Manfaat:</strong> Latihan kardio praktis yang dapat dilakukan di mana saja, meningkatkan kebugaran dan koordinasi.</p>
+                        <p><strong>Stok Tersedia:</strong> 50 pcs</p>
+                        <p><strong>Harga:</strong> Rp 35.000</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button onclick="addToCart(22, 'Tali Lompat Sederhana, 100g', 35000, 'Images/Sports/accessory7.jpeg')" class="btn btn-primary">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      <!-- Bootstrap Icons -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+      <!-- JavaScript -->
+      <script>
+          // Fungsi untuk menambahkan item ke keranjang
+          function addToCart(id, name, price, image) {
+              // Ambil data keranjang dari localStorage atau buat baru jika kosong
+              let cart = JSON.parse(localStorage.getItem('cart')) || [];
+              
+              // Cek apakah item sudah ada di keranjang
+              const existingItem = cart.find(item => item.id === id);
+              
+              if (existingItem) {
+                  // Jika sudah ada, tambah quantity
+                  existingItem.quantity += 1;
+              } else {
+                  // Jika belum ada, tambahkan item baru
+                  cart.push({
+                      id: id,
+                      name: name,
+                      price: price,
+                      image: image,
+                      quantity: 1
+                  });
+              }
+              
+              // Simpan ke localStorage
+              localStorage.setItem('cart', JSON.stringify(cart));
+              
+              // Update counter keranjang
+              updateCartCounter();
+              
+              // Tampilkan notifikasi
+              showToast(`${name} added to cart`, 'success');
+              
+              // Redirect ke halaman order setelah 1 detik
+              setTimeout(() => {
+              window.location.href = 'keranjang.html';
+              }, 1000);
+  
+          // Fungsi untuk update counter keranjang
+          function updateCartCounter() {
+              const cart = JSON.parse(localStorage.getItem('cart')) || [];
+              const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+              document.querySelector('.cart-count').textContent = totalItems;
+          }
+          
+          // Fungsi untuk menampilkan notifikasi
+          function showToast(message, type) {
+              let background = '';
+              switch(type) {
+                  case 'success':
+                      background = 'linear-gradient(to right, #00b09b, #96c93d)';
+                      break;
+                  case 'danger':
+                      background = 'linear-gradient(to right, #ff416c, #ff4b2b)';
+                      break;
+                  default:
+                      background = 'linear-gradient(to right, #00b09b, #96c93d)';
+              }
+              
+              Toastify({
+                  text: message,
+                  duration: 3000,
+                  close: true,
+                  gravity: "top",
+                  position: "right",
+                  backgroundColor: background,
+                  stopOnFocus: true
+              }).showToast();
+          }
+      }
+          
+          // Update counter saat halaman dimuat
+          document.addEventListener('DOMContentLoaded', updateCartCounter);
+      </script>
+      
+      <!-- Toastify untuk notifikasi -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+      
+          <!-- Tambahkan elemen spacer sebelum footer -->
+<div class="spacer" style="height: 50px;"></div>
+
+     
+    <!-- Footer -->
+    <footer class="bg-blue py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h4>Follow us on</h4>
+                    <div class="social-icons">
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="mt-3">
+                        <p>Subscribe to our newsletter</p>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h4>Useful Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Grocies Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right me-2"></i>FAQ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Terms and Conditions</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Shipping Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Returns & Refunds</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Browse our Products</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="dairy.html"><i class="fas fa-chevron-right me-2"></i>Dairy Products</a></li>
+                        <li><a href="vegetables.html"><i class="fas fa-chevron-right me-2"></i>Vegetables</a></li>
+                        <li><a href="cosmetics.html"><i class="fas fa-chevron-right me-2"></i>Cosmetics and Skin Care</a></li>
+                        <li><a href="beverages.html"><i class="fas fa-chevron-right me-2"></i>Beverages</a></li>
+                        <li><a href="snacks.html"><i class="fas fa-chevron-right me-2"></i>Snacks</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4 copyright">
+                <p class="mb-0">Tewuneed Marketplace © 2025 All Rights Reserved</p>
+                <div class="payment-methods mt-2">
+                    <i class="fab fa-cc-visa fa-2x me-2"></i>
+                    <i class="fab fa-cc-mastercard fa-2x me-2"></i>
+                    <i class="fab fa-cc-paypal fa-2x me-2"></i>
+                    <i class="fab fa-cc-amazon-pay fa-2x"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
