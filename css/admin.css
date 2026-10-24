@@ -1,0 +1,239 @@
+/* ==========================================================================
+   TeWuNeed Admin - Modern Executive Slate & Emerald Theme
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --admin-bg: #f8fafc;
+    --admin-sidebar-bg: #0f172a;
+    --admin-sidebar-hover: #1e293b;
+    --admin-primary: #0d9488;
+    --admin-primary-dark: #0f766e;
+    --admin-accent: #f59e0b;
+    --admin-border: #e2e8f0;
+    --admin-card-bg: #ffffff;
+    --admin-text: #1e293b;
+    --admin-text-muted: #64748b;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--admin-bg);
+    color: var(--admin-text);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Sidebar */
+.sidebar {
+    min-height: 100vh;
+    background: var(--admin-sidebar-bg);
+    position: fixed;
+    width: 250px;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-right: 1px solid #1e293b;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-brand {
+    padding: 24px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-brand h4 {
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    font-size: 1.35rem;
+}
+
+.sidebar-brand .brand-tewu {
+    color: #2dd4bf;
+}
+
+.sidebar-brand .brand-need {
+    color: #f59e0b;
+}
+
+.sidebar-brand small {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.sidebar-nav {
+    padding: 20px 12px;
+}
+
+.sidebar-nav .nav-link {
+    color: #94a3b8;
+    padding: 11px 16px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.sidebar-nav .nav-link:hover {
+    color: #ffffff;
+    background: var(--admin-sidebar-hover);
+    transform: translateX(3px);
+}
+
+.sidebar-nav .nav-link.active {
+    color: #ffffff;
+    background: var(--admin-primary);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.35);
+}
+
+.sidebar-nav .nav-link i {
+    width: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+/* Top bar */
+.top-bar {
+    background: #ffffff;
+    padding: 16px 30px;
+    margin: -30px -30px 30px -30px;
+    border-bottom: 1px solid var(--admin-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Modern Card */
+.card, .table-card, .stat-card {
+    background: #ffffff;
+    border: 1px solid var(--admin-border);
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+.stat-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card .card-body {
+    padding: 22px;
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* Tables */
+.table {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.table thead th {
+    background: #f8fafc;
+    color: #475569;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.table tbody td {
+    padding: 14px 18px;
+    font-size: 0.88rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.table tbody tr:hover td {
+    background-color: #f8fafc;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--admin-primary);
+    border-color: var(--admin-primary);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--admin-primary-dark);
+    border-color: var(--admin-primary-dark);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+.btn-outline-primary {
+    color: var(--admin-primary);
+    border-color: var(--admin-primary);
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--admin-primary);
+    border-color: var(--admin-primary);
+    color: #ffffff;
+}
+
+.product-img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        min-height: auto;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    .top-bar {
+        margin: -20px -20px 20px -20px;
+        padding: 14px 20px;
+    }
+}
