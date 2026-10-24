@@ -121,7 +121,8 @@
     
     <!-- Core Helper JS -->
     <script>
-        const SITE_URL = '<?= SITE_URL ?>';
+        window.SITE_URL = window.SITE_URL || '<?= SITE_URL ?>';
+        var SITE_URL = window.SITE_URL;
         
         function showToast(message, type = 'success') {
             const colors = {

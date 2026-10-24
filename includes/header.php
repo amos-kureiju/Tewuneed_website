@@ -50,7 +50,7 @@ try {
     <?php endif; ?>
     <script>
         window.SITE_URL = '<?= SITE_URL ?>';
-        var SITE_URL = '<?= SITE_URL ?>';
+        var SITE_URL = window.SITE_URL;
     </script>
 </head>
 <body>
