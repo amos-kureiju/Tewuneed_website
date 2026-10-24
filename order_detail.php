@@ -217,10 +217,25 @@ include 'includes/header.php';
                     <span class="fw-bold text-primary fs-5"><?= formatRupiah($order['total_amount']) ?></span>
                 </div>
 
-                <?php if ($order['status'] === 'pending'): ?>
-                <div class="alert alert-warning small p-3 rounded-3 mb-0" role="alert">
-                    <div class="fw-bold mb-1"><i class="fas fa-clock me-1"></i>Segera Selesaikan Pembayaran</div>
-                    Silakan transfer sesuai total ke rekening resmi <?= SITE_NAME ?> dan konfirmasikan pembayaran Anda.
+                <?php 
+                $paymentInfo = getPaymentMethodDetails($order['payment_method'], $order['total_amount'], $order['payment_status']);
+                if ($order['status'] === 'pending'): 
+                ?>
+                    <?php if ($paymentInfo['type'] === 'cod'): ?>
+                    <div class="alert small p-3 rounded-3 mb-0 border-0" role="alert" style="background-color: #f0fdfa; color: #0f766e;">
+                        <div class="fw-bold mb-1"><i class="fas fa-hand-holding-dollar me-1"></i>Metode: COD (Bayar di Tempat)</div>
+                        Siapkan uang tunai pas sebesar <strong><?= formatRupiah($order['total_amount']) ?></strong> saat kurir menyerahkan pesanan. Tidak perlu transfer sekarang.
+                    </div>
+                    <?php else: ?>
+                    <div class="alert alert-warning small p-3 rounded-3 mb-0" role="alert">
+                        <div class="fw-bold mb-1"><i class="fas fa-clock me-1"></i>Segera Selesaikan Pembayaran</div>
+                        Silakan transfer <?= formatRupiah($order['total_amount']) ?> sesuai instruksi pembayaran <strong><?= htmlspecialchars($order['payment_method']) ?></strong>.
+                    </div>
+                    <?php endif; ?>
+                <?php elseif ($order['payment_status'] === 'paid'): ?>
+                <div class="alert alert-success small p-3 rounded-3 mb-0 border-0" role="alert">
+                    <div class="fw-bold mb-1"><i class="fas fa-circle-check me-1"></i>Pembayaran Lunas</div>
+                    Terima kasih, pembayaran pesanan ini telah terverifikasi lunas.
                 </div>
                 <?php endif; ?>
             </div>

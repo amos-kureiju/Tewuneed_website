@@ -704,4 +704,188 @@ function verifyCsrfToken($token) {
 function csrfInput() {
     return '<input type="hidden" name="csrf_token" value="' . generateCsrfToken() . '">';
 }
+
+/**
+ * Get payment method instructions & details logically based on selected method
+ * @param string $methodName
+ * @param float $totalAmount
+ * @param string $paymentStatus
+ * @return array
+ */
+function getPaymentMethodDetails($methodName, $totalAmount, $paymentStatus = 'pending') {
+    $methodLower = strtolower($methodName ?? '');
+    
+    // 1. Cash on Delivery (COD)
+    if (strpos($methodLower, 'cod') !== false || strpos($methodLower, 'tempat') !== false) {
+        return [
+            'type' => 'cod',
+            'title' => 'COD (Bayar di Tempat)',
+            'badge_class' => 'bg-info bg-opacity-10 text-info border border-info border-opacity-25',
+            'card_border' => 'border-info',
+            'card_header' => 'bg-info text-white',
+            'icon' => 'fa-hand-holding-dollar',
+            'headline' => 'Siapkan Uang Tunai Saat Pesanan Tiba',
+            'is_transfer_required' => false,
+            'amount' => $totalAmount,
+            'details' => [
+                'Metode Pembayaran' => 'Cash on Delivery (COD)',
+                'Total yang Harus Disiapkan' => formatRupiah($totalAmount),
+                'Waktu Pembayaran' => 'Saat kurir menyerahkan paket di alamat Anda'
+            ],
+            'note' => 'Anda memilih metode Bayar di Tempat (COD). Anda <strong>TIDAK PERLU</strong> melakukan transfer bank sekarang. Mohon siapkan uang tunai pas untuk mempermudah transaksi dengan kurir saat pengantaran pesanan.'
+        ];
+    }
+    
+    // 2. Transfer Bank Mandiri
+    if (strpos($methodLower, 'mandiri') !== false) {
+        return [
+            'type' => 'bank_transfer',
+            'title' => 'Transfer Bank Mandiri',
+            'badge_class' => 'bg-warning bg-opacity-10 text-dark border border-warning',
+            'card_border' => 'border-primary',
+            'card_header' => 'bg-primary text-white',
+            'icon' => 'fa-building-columns',
+            'headline' => 'Transfer ke Rekening Bank Mandiri Resmi',
+            'is_transfer_required' => true,
+            'amount' => $totalAmount,
+            'details' => [
+                'Bank Tujuan' => 'Bank Mandiri',
+                'Nomor Rekening' => '137-00-1234567-8',
+                'Atas Nama' => 'PT TEWUNEED INDONESIA',
+                'Jumlah Transfer' => formatRupiah($totalAmount)
+            ],
+            'note' => 'Silakan selesaikan pembayaran dalam waktu 24 jam via Livin\' by Mandiri, ATM, atau Internet Banking agar pesanan segera diproses.'
+        ];
+    }
+    
+    // 3. Transfer Bank BNI
+    if (strpos($methodLower, 'bni') !== false) {
+        return [
+            'type' => 'bank_transfer',
+            'title' => 'Transfer Bank BNI',
+            'badge_class' => 'bg-warning bg-opacity-10 text-dark border border-warning',
+            'card_border' => 'border-primary',
+            'card_header' => 'bg-primary text-white',
+            'icon' => 'fa-building-columns',
+            'headline' => 'Transfer ke Rekening Bank BNI Resmi',
+            'is_transfer_required' => true,
+            'amount' => $totalAmount,
+            'details' => [
+                'Bank Tujuan' => 'Bank BNI',
+                'Nomor Rekening' => '089-123-4567',
+                'Atas Nama' => 'PT TEWUNEED INDONESIA',
+                'Jumlah Transfer' => formatRupiah($totalAmount)
+            ],
+            'note' => 'Silakan selesaikan pembayaran dalam waktu 24 jam via BNI Mobile Banking, ATM, atau SMS Banking.'
+        ];
+    }
+    
+    // 4. Transfer Bank BCA
+    if (strpos($methodLower, 'bca') !== false) {
+        return [
+            'type' => 'bank_transfer',
+            'title' => 'Transfer Bank BCA',
+            'badge_class' => 'bg-warning bg-opacity-10 text-dark border border-warning',
+            'card_border' => 'border-primary',
+            'card_header' => 'bg-primary text-white',
+            'icon' => 'fa-building-columns',
+            'headline' => 'Transfer ke Rekening Bank BCA Resmi',
+            'is_transfer_required' => true,
+            'amount' => $totalAmount,
+            'details' => [
+                'Bank Tujuan' => 'Bank Central Asia (BCA)',
+                'Nomor Rekening' => '123-456-7890',
+                'Atas Nama' => 'PT TEWUNEED INDONESIA',
+                'Jumlah Transfer' => formatRupiah($totalAmount)
+            ],
+            'note' => 'Silakan selesaikan pembayaran dalam waktu 24 jam via myBCA, BCA Mobile, KlikBCA, atau ATM BCA.'
+        ];
+    }
+    
+    // 5. GoPay
+    if (strpos($methodLower, 'gopay') !== false) {
+        return [
+            'type' => 'e_wallet',
+            'title' => 'Pembayaran GoPay',
+            'badge_class' => 'bg-success bg-opacity-10 text-success border border-success',
+            'card_border' => 'border-success',
+            'card_header' => 'bg-success text-white',
+            'icon' => 'fa-wallet',
+            'headline' => 'Transfer Saldo GoPay / QRIS Toko',
+            'is_transfer_required' => true,
+            'amount' => $totalAmount,
+            'details' => [
+                'Layanan' => 'GoPay Bisnis',
+                'Nomor Akun / HP' => '0812-9876-5432',
+                'Nama Merchant' => 'TeWuNeed Official Store',
+                'Jumlah Bayar' => formatRupiah($totalAmount)
+            ],
+            'note' => 'Buka aplikasi Gojek / GoPay, pilih Kirim / Transfer Saldo ke nomor merchant di atas atau scan QRIS toko.'
+        ];
+    }
+    
+    // 6. OVO
+    if (strpos($methodLower, 'ovo') !== false) {
+        return [
+            'type' => 'e_wallet',
+            'title' => 'Pembayaran OVO',
+            'badge_class' => 'bg-primary bg-opacity-10 text-primary border border-primary',
+            'card_border' => 'border-primary',
+            'card_header' => 'bg-primary text-white',
+            'icon' => 'fa-wallet',
+            'headline' => 'Transfer Saldo OVO Merchant',
+            'is_transfer_required' => true,
+            'amount' => $totalAmount,
+            'details' => [
+                'Layanan' => 'OVO Merchant',
+                'Nomor OVO' => '0812-9876-5432',
+                'Nama Merchant' => 'TeWuNeed Official Store',
+                'Jumlah Bayar' => formatRupiah($totalAmount)
+            ],
+            'note' => 'Buka aplikasi OVO Anda, pilih menu Transfer ke nomor akun merchant di atas dengan nominal yang sesuai.'
+        ];
+    }
+    
+    // 7. DANA
+    if (strpos($methodLower, 'dana') !== false) {
+        return [
+            'type' => 'e_wallet',
+            'title' => 'Pembayaran DANA',
+            'badge_class' => 'bg-info bg-opacity-10 text-info border border-info',
+            'card_border' => 'border-info',
+            'card_header' => 'bg-info text-white',
+            'icon' => 'fa-wallet',
+            'headline' => 'Kirim Saldo DANA Bisnis',
+            'is_transfer_required' => true,
+            'amount' => $totalAmount,
+            'details' => [
+                'Layanan' => 'DANA Bisnis',
+                'Nomor DANA' => '0812-9876-5432',
+                'Nama Akun' => 'TeWuNeed Official Store',
+                'Jumlah Bayar' => formatRupiah($totalAmount)
+            ],
+            'note' => 'Buka aplikasi DANA, pilih menu Kirim Uang ke nomor di atas dengan nominal yang sesuai.'
+        ];
+    }
+    
+    // Default Fallback
+    return [
+        'type' => 'bank_transfer',
+        'title' => htmlspecialchars($methodName),
+        'badge_class' => 'bg-warning bg-opacity-10 text-dark border border-warning',
+        'card_border' => 'border-primary',
+        'card_header' => 'bg-primary text-white',
+        'icon' => 'fa-credit-card',
+        'headline' => 'Selesaikan Pembayaran Pesanan',
+        'is_transfer_required' => true,
+        'amount' => $totalAmount,
+        'details' => [
+            'Metode Pembayaran' => htmlspecialchars($methodName),
+            'Nomor Rekening / Akun' => '123-456-7890',
+            'Atas Nama' => 'PT TEWUNEED INDONESIA',
+            'Jumlah Pembayaran' => formatRupiah($totalAmount)
+        ],
+        'note' => 'Silakan lakukan pembayaran sesuai dengan total belanja pesanan Anda.'
+    ];
+}
 ?>

@@ -148,27 +148,69 @@ include 'includes/header.php';
                 </div>
             </div>
             
-            <!-- Payment Instructions -->
-            <?php if ($order['payment_status'] === 'pending'): ?>
-            <div class="card border-0 shadow-sm border-warning mb-4">
-                <div class="card-header bg-warning text-dark">
-                    <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>Instruksi Pembayaran</h5>
+            <!-- Payment Instructions / Information -->
+            <?php 
+            $paymentInfo = getPaymentMethodDetails($order['payment_method'], $order['total_amount'], $order['payment_status']);
+            ?>
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4 border" style="<?= $paymentInfo['type'] === 'cod' ? 'border-color: #0d9488 !important;' : '' ?>">
+                <div class="card-header py-3 <?= $paymentInfo['type'] === 'cod' ? 'text-white' : 'bg-warning text-dark' ?>" style="<?= $paymentInfo['type'] === 'cod' ? 'background: #0f766e;' : '' ?>">
+                    <h5 class="mb-0 fw-bold fs-6">
+                        <i class="fas <?= $paymentInfo['icon'] ?> me-2"></i><?= $paymentInfo['headline'] ?>
+                    </h5>
                 </div>
-                <div class="card-body">
-                    <p>Silakan selesaikan pembayaran Anda dalam waktu <strong>24 jam</strong> ke rekening berikut:</p>
-                    <div class="bg-light rounded p-3">
-                        <p class="mb-1"><strong>Bank BCA</strong></p>
-                        <p class="mb-1">No. Rekening: <strong>1234567890</strong></p>
-                        <p class="mb-1">Atas Nama: <strong>PT TEWUNEED INDONESIA</strong></p>
-                        <p class="mb-0">Jumlah: <strong class="text-primary"><?= formatRupiah($order['total_amount']) ?></strong></p>
+                <div class="card-body p-4">
+                    <?php if ($paymentInfo['type'] === 'cod'): ?>
+                    <div class="alert border-0 rounded-3 mb-3 d-flex align-items-start gap-3" style="background-color: #f0fdfa; color: #0f766e;">
+                        <i class="fas fa-circle-check fs-4 mt-1" style="color: #0d9488;"></i>
+                        <div>
+                            <div class="fw-bold mb-1">Metode Pembayaran: COD (Bayar di Tempat)</div>
+                            <p class="mb-0 small" style="line-height: 1.6;">
+                                <?= $paymentInfo['note'] ?>
+                            </p>
+                        </div>
                     </div>
-                    <p class="mt-3 mb-0 text-muted small">
-                        <i class="fas fa-info-circle me-1"></i>
-                        Setelah melakukan pembayaran, pesanan akan diproses dan dikirimkan ke alamat Anda.
+                    
+                    <div class="bg-light rounded-3 p-3 mb-3 border">
+                        <div class="row g-2">
+                            <div class="col-sm-6">
+                                <small class="text-muted d-block">Metode Pembayaran</small>
+                                <span class="fw-semibold text-dark">Cash on Delivery (COD)</span>
+                            </div>
+                            <div class="col-sm-6">
+                                <small class="text-muted d-block">Total yang Harus Disiapkan</small>
+                                <span class="fw-bold fs-5" style="color: #0d9488;"><?= formatRupiah($order['total_amount']) ?></span>
+                            </div>
+                            <div class="col-12 pt-2 border-top mt-2">
+                                <small class="text-muted d-block">Waktu Pembayaran</small>
+                                <span class="small fw-semibold text-dark">Serahkan uang tunai pas kepada kurir saat pesanan sampai di alamat Anda</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="small text-muted d-flex align-items-center gap-2">
+                        <i class="fas fa-truck-fast" style="color: #0d9488;"></i>
+                        <span>Pesanan Anda sedang dipersiapkan dan akan segera dikirim oleh pihak kurir.</span>
+                    </div>
+
+                    <?php else: ?>
+                    <p class="mb-3 small text-dark">
+                        Silakan selesaikan pembayaran pesanan Anda dalam waktu <strong>24 jam</strong> ke rekening/akun berikut:
                     </p>
+                    <div class="bg-light rounded-3 p-3 mb-3 border">
+                        <?php foreach ($paymentInfo['details'] as $label => $val): ?>
+                        <div class="d-flex justify-content-between align-items-center mb-2 small">
+                            <span class="text-muted"><?= htmlspecialchars($label) ?></span>
+                            <span class="fw-bold text-dark"><?= $val ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <p class="mt-2 mb-0 text-muted small">
+                        <i class="fas fa-circle-info me-1"></i>
+                        <?= $paymentInfo['note'] ?>
+                    </p>
+                    <?php endif; ?>
                 </div>
             </div>
-            <?php endif; ?>
             
             <!-- Actions -->
             <div class="d-flex justify-content-center gap-3">

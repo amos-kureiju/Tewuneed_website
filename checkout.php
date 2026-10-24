@@ -271,18 +271,35 @@ include 'includes/header.php';
                         foreach ($paymentMethods as $pm) {
                             $paymentGroups[$pm['type']][] = $pm;
                         }
+                        
+                        $typeLabels = [
+                            'bank_transfer' => 'Transfer Bank (Verifikasi Otomatis/Manual)',
+                            'e_wallet' => 'E-Wallet / Dompet Digital',
+                            'cod' => 'Bayar di Tempat (Cash on Delivery)'
+                        ];
                         ?>
                         
                         <?php foreach ($paymentGroups as $type => $methods): ?>
                         <div class="mb-3">
-                            <h6 class="text-muted text-uppercase small"><?= str_replace('_', ' ', $type) ?></h6>
+                            <h6 class="text-muted text-uppercase small fw-bold mb-2">
+                                <?= $typeLabels[$type] ?? ucwords(str_replace('_', ' ', $type)) ?>
+                            </h6>
                             <?php foreach ($methods as $method): ?>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="payment_method" id="pay<?= $method['id'] ?>" value="<?= $method['id'] ?>">
-                                <label class="form-check-label" for="pay<?= $method['id'] ?>">
-                                    <?= htmlspecialchars($method['name']) ?>
-                                    <?php if ($method['fee_percentage'] > 0 || $method['fee_fixed'] > 0): ?>
-                                    <small class="text-muted">(+ biaya admin)</small>
+                            <div class="form-check p-3 border rounded-3 mb-2 bg-light bg-opacity-50">
+                                <input class="form-check-input" type="radio" name="payment_method" id="pay<?= $method['id'] ?>" value="<?= $method['id'] ?>" required>
+                                <label class="form-check-label w-100 cursor-pointer" for="pay<?= $method['id'] ?>">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <strong><?= htmlspecialchars($method['name']) ?></strong>
+                                        <?php if ($method['type'] === 'cod'): ?>
+                                        <span class="badge bg-success bg-opacity-10 text-success small">Bayar Tunai</span>
+                                        <?php endif; ?>
+                                    </div>
+                                    <?php if ($method['type'] === 'cod'): ?>
+                                    <small class="text-muted d-block mt-1">Bayar langsung dengan uang pas ke kurir saat barang sampai di alamat Anda.</small>
+                                    <?php elseif ($method['type'] === 'bank_transfer'): ?>
+                                    <small class="text-muted d-block mt-1">Selesaikan transfer melalui ATM / M-Banking setelah pesanan dibuat.</small>
+                                    <?php elseif ($method['type'] === 'e_wallet'): ?>
+                                    <small class="text-muted d-block mt-1">Pembayaran via aplikasi e-wallet resmi.</small>
                                     <?php endif; ?>
                                 </label>
                             </div>
