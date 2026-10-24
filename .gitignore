@@ -1,2 +1,32 @@
-.qodo
+# OS generated files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor & IDE directories
 .vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.qodo/
+
+# Environment and sensitive config overrides
+.env
+.env.local
+.env.*.local
+*.log
+
+# Temporary & Cache
+tmp/
+temp/
